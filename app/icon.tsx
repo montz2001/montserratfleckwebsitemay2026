@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
 
+export const dynamic = "force-static";
+
 // "MF" mark in lobster pink on the site's eggshell background.
 // Rendered at 64x64; browsers scale down for 16x16 / 32x32 tabs.
 

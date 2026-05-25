@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 
+export const dynamic = "force-static";
 export const alt =
   "Montserrat Fleck · Social Coordinator at Paramount. Brand voice, live event copy, Threads playbook. 200M+ Marshals views, +218K @garfield Threads, 9 international markets.";
 export const size = { width: 1200, height: 630 };
