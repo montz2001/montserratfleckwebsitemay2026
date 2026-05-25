@@ -83,6 +83,31 @@ section[id] {
   }
 }
 
+/* Voice posts — <details> based expand/collapse */
+.voice-post[open] > summary .voice-chevron {
+  transform: rotate(180deg);
+}
+.voice-post > summary { transition: color 0.15s ease; }
+
+/* Desktop: also expand on hover for quick scanning */
+@media (hover: hover) and (min-width: 768px) {
+  .voice-post > .voice-post-body {
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    transition: max-height 0.3s ease-out, opacity 0.2s ease-out, padding-top 0.3s ease-out;
+  }
+  .voice-post[open] > .voice-post-body,
+  .voice-post:hover > .voice-post-body,
+  .voice-post:focus-within > .voice-post-body {
+    max-height: 2400px;
+    opacity: 1;
+    padding-top: 1rem;
+  }
+}
+
 /* Mobile menu — CSS-only via <details> */
 .mobile-menu[open] > summary .menu-open { display: none; }
 .mobile-menu:not([open]) > summary .menu-close { display: none; }

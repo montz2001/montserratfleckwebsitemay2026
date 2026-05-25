@@ -857,7 +857,7 @@ export default function Home() {
         <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-[var(--accent-2)] mb-5">
           Paramount social · Nickelodeon · CBS · SpongeBob · Star Trek
         </p>
-        <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl leading-[1.05] tracking-tight max-w-5xl">
+        <h1 className="font-serif text-[2.25rem] sm:text-6xl md:text-7xl leading-[1.05] tracking-tight max-w-5xl">
           I write the post, send the post, and{" "}
           <span className="gradient-text">
             live in the comments. Not in a healthy way.
@@ -900,7 +900,7 @@ export default function Home() {
                 width={500}
                 height={233}
                 decoding="async"
-                className="h-24 sm:h-30 w-auto object-contain brand-logo"
+                className="h-16 sm:h-30 w-auto object-contain brand-logo"
               />
               <span
                 aria-hidden="true"
@@ -930,7 +930,7 @@ export default function Home() {
           {stats.map((s) => (
             <div
               key={s.value}
-              className="rounded-3xl border border-[var(--rule)] bg-[var(--background)] p-7 hover:border-[var(--accent)] transition-colors"
+              className="rounded-3xl border border-[var(--rule)] bg-[var(--background)] p-5 sm:p-7 hover:border-[var(--accent)] transition-colors"
             >
               <div className="font-serif text-5xl sm:text-6xl text-[var(--accent)]">
                 {s.value}
@@ -1189,7 +1189,7 @@ export default function Home() {
             the receipts above come from, and why the work below goes deeper
             than my earlier roles at the Laurie Berkner Band, CMA or in
             internships. Each post was written, scheduled and (mostly) replied
-            to by me. Click any line to open it.
+            to by me. Tap any caption to expand.
           </p>
         </div>
 
@@ -1232,10 +1232,9 @@ export default function Home() {
                   {b.note}
                 </p>
               </div>
-              <ul className="divide-y divide-[var(--rule)]">
-                {b.posts.map((p) => {
+              <div className="divide-y divide-[var(--rule)]">
+                {b.posts.map((p, i) => {
                   const thumb = p.thumb && assetExists(p.thumb) ? p.thumb : undefined;
-                  // If a sibling .mp4 exists for this thumb, prefer it (autoplay loop on hover-reveal).
                   const videoCandidate = thumb
                     ? thumb.replace(/\.(jpe?g|png|webp)$/i, ".mp4")
                     : undefined;
@@ -1246,69 +1245,69 @@ export default function Home() {
                   const commentsShot =
                     p.commentsShot && assetExists(p.commentsShot) ? p.commentsShot : undefined;
                   return (
-                  <li key={p.url + p.caption} className="group py-3 first:pt-0 last:pb-0">
-                    <a
-                      href={p.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block"
-                    >
-                      <p className="text-[var(--foreground)] leading-snug group-hover:text-[var(--accent)] group-focus-within:text-[var(--accent)] transition-colors">
+                  <details
+                    key={p.url + p.caption}
+                    open={i === 0}
+                    className="voice-post group py-3 first:pt-0 last:pb-0"
+                  >
+                    <summary className="block cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                      <span className="block text-[var(--foreground)] leading-snug group-hover:text-[var(--accent)] transition-colors">
                         {p.caption}{" "}
-                        <span className="text-[var(--foreground)]/30 group-hover:text-[var(--accent)]/70 group-focus-within:text-[var(--accent)]/70">
-                          ↗
+                        <span className="voice-chevron inline-block text-[var(--foreground)]/30 group-hover:text-[var(--accent)]/70 transition-transform">
+                          ▾
                         </span>
-                      </p>
+                      </span>
                       {p.sub && (
-                        <p className="text-xs text-[var(--foreground)]/55 mt-1">
+                        <span className="block text-xs text-[var(--foreground)]/55 mt-1">
                           {p.sub}
-                        </p>
+                        </span>
                       )}
-                    </a>
+                    </summary>
                     {thumb && (
-                      <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus-within:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out">
-                        <div className="overflow-hidden">
-                          <a
-                            href={p.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`Open: ${p.caption}`}
-                            className="block pt-4 space-y-3"
-                          >
-                            {video && thumb ? (
-                              <HoverVideo
-                                src={bust(video)}
-                                poster={bust(thumb)}
-                                className="block w-full max-w-sm"
-                              />
-                            ) : (
-                              /* eslint-disable-next-line @next/next/no-img-element */
-                              <img
-                                src={bust(thumb)}
-                                alt=""
-                                loading="lazy"
-                                decoding="async"
-                                className="block w-full max-w-sm rounded-md border border-[var(--rule)]"
-                              />
-                            )}
-                            {commentsShot && (
-                              /* eslint-disable-next-line @next/next/no-img-element */
-                              <img
-                                src={bust(commentsShot)}
-                                alt=""
-                                loading="lazy"
-                                decoding="async"
-                                className="block w-full max-w-sm rounded-md border border-[var(--rule)]"
-                              />
-                            )}
-                          </a>
-                        </div>
+                      <div className="voice-post-body pt-4">
+                        <a
+                          href={p.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Open on ${p.url.includes('threads') ? 'Threads' : p.url.includes('facebook') ? 'Facebook' : 'Instagram'}: ${p.caption}`}
+                          className="block space-y-3"
+                        >
+                          {video && thumb ? (
+                            <HoverVideo
+                              src={bust(video)}
+                              poster={bust(thumb)}
+                              className="block w-full max-w-sm"
+                            />
+                          ) : (
+                            /* eslint-disable-next-line @next/next/no-img-element */
+                            <img
+                              src={bust(thumb)}
+                              alt=""
+                              loading="lazy"
+                              decoding="async"
+                              className="block w-full max-w-sm rounded-md border border-[var(--rule)]"
+                            />
+                          )}
+                          {commentsShot && (
+                            /* eslint-disable-next-line @next/next/no-img-element */
+                            <img
+                              src={bust(commentsShot)}
+                              alt=""
+                              loading="lazy"
+                              decoding="async"
+                              className="block w-full max-w-sm rounded-md border border-[var(--rule)]"
+                            />
+                          )}
+                          <span className="block text-xs text-[var(--foreground)]/55 underline decoration-[var(--accent)]/40 underline-offset-4">
+                            Open the post ↗
+                          </span>
+                        </a>
                       </div>
                     )}
-                  </li>
+                  </details>
                   );
                 })}
-              </ul>
+              </div>
             </div>
             );
           })}
@@ -1364,8 +1363,8 @@ export default function Home() {
             alt="Montserrat Fleck at the Oscars"
             width={260}
             height={350}
-            sizes="(max-width: 768px) 100vw, 260px"
-            className="w-full h-auto border border-[var(--rule)]"
+            sizes="(max-width: 768px) 60vw, 260px"
+            className="w-2/3 max-w-[240px] md:w-full md:max-w-none h-auto border border-[var(--rule)]"
           />
           <div>
             <span className="eyebrow">About me</span>
