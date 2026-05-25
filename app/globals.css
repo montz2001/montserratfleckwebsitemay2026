@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f1e8d8;       /* Eggshell */
+  --foreground: #4f464e;       /* Taupe Grey */
+  --ink: #08080a;              /* Black, for emphasis */
+  --accent: #e64a53;           /* Lobster Pink — primary */
+  --accent-2: #50552d;         /* Olive Leaf — eyebrows / secondary */
+  --accent-3: #ae7f4a;         /* Copper — hover / details */
+  --soft: #bb9fcd;             /* Wisteria — soft panels */
+  --rule: rgba(79, 70, 78, 0.18);
+  --nav-h: 3.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Section anchors should clear the sticky nav when jumped to */
+section[id] {
+  scroll-margin-top: calc(var(--nav-h) + 1rem);
+}
+
+/* Consistent focus ring for keyboard users across all interactive elements */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.gradient-text {
+  background: linear-gradient(95deg, var(--accent) 0%, var(--accent) 40%, var(--soft) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 0.75rem;
+}
+.marquee {
+  display: flex;
+  gap: 3rem;
+  animation: scroll 35s linear infinite;
+  width: max-content;
+}
+
+.brand-logo {
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.brand-logo:hover {
+  opacity: 1;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile menu — CSS-only via <details> */
+.mobile-menu[open] > summary .menu-open { display: none; }
+.mobile-menu:not([open]) > summary .menu-close { display: none; }
+.mobile-menu > summary { list-style: none; cursor: pointer; }
+.mobile-menu > summary::-webkit-details-marker { display: none; }
+
+/* Respect reduced motion: kill marquee + smooth scroll for users who ask */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee { animation: none; }
+  *, *::before, *::after {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Print stylesheet — recruiters press Cmd+P and get a clean read */
+@media print {
+  :root { --background: #ffffff; --foreground: #111; --rule: #ccc; }
+  html, body { background: #fff !important; color: #111 !important; }
+  header, .marquee, .no-print { display: none !important; }
+  section { page-break-inside: avoid; padding-block: 1rem !important; }
+  a { color: #111 !important; text-decoration: underline; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #666;
+    word-break: break-all;
+  }
+  .gradient-text {
+    -webkit-text-fill-color: #111 !important;
+    color: #111 !important;
+    background: none !important;
+  }
+  /* Expand all hidden voice thumbnails so the printout is complete */
+  .group .grid-rows-\[0fr\] { grid-template-rows: 1fr !important; }
+  img { max-width: 100% !important; page-break-inside: avoid; }
+}
