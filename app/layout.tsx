@@ -22,7 +22,7 @@ const SITE_URL =
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : "https://montserratfleck.com");
 
-const TITLE = "Montserrat Fleck — Social Media Coordinator";
+const TITLE = "Montserrat Fleck · Paramount social, Threads, brand voice";
 const DESCRIPTION =
   "Social Coordinator at Paramount running brand voice, live event copy, and the Threads playbook across the franchise roster. 200M+ views on the Marshals launch, +218K @garfield followers in 90 days, paid partnerships live at the 68th GRAMMYs. NYC, brand-side preferred.";
 
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: TITLE,
-    template: "%s — Montserrat Fleck",
+    template: "%s · Montserrat Fleck",
   },
   description: DESCRIPTION,
   applicationName: "Montserrat Fleck",

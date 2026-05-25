@@ -864,10 +864,10 @@ export default function Home() {
           </span>
         </h1>
         <p className="mt-7 max-w-xl text-base sm:text-lg text-[var(--foreground)]/75 leading-relaxed">
-          I&apos;m the demo your algorithm is optimizing for. I work at{" "}
-          <strong>Paramount</strong> as a Social Coordinator, writing for
-          Nickelodeon, CBS, and most of the portfolio. I built the Threads
-          playbook for the brand roster.
+          I&apos;m the demo your algorithm is optimizing for. I&apos;m a
+          social strategist and writer at <strong>Paramount</strong>,
+          deciding how Nickelodeon, CBS, SpongeBob, Star Trek, Garfield, TMNT,
+          and Avatar sound online. I built the Threads playbook for the roster.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
@@ -1372,9 +1372,11 @@ export default function Home() {
             <h2 className="font-serif text-4xl sm:text-5xl mb-6">About me.</h2>
             <div className="space-y-5 text-lg text-[var(--foreground)]/85 leading-relaxed">
               <p>
-                I&apos;m a Social Coordinator on the Franchises team at
-                Paramount TV Marketing. The job is publishing, strategy, and
-                community management across most of the major Paramount IP.
+                I shape social strategy and brand voice across Paramount&apos;s
+                franchise portfolio: how SpongeBob, Garfield, Star Trek, TMNT,
+                Avatar, Nickelodeon, and CBS show up online (voice, strategy,
+                copy). Officially I&apos;m Social Coordinator on the Franchises
+                team at Paramount TV Marketing.
               </p>
               <p>
                 Most weeks I&apos;m replying as a cartoon. I went to Tisch

@@ -37,7 +37,7 @@ export default function ResumePage() {
                 <em>Social Coordinator, Franchises Team</em>,{" "}
                 <strong>Paramount TV Marketing</strong>
               </span>
-              <span>Nov 2025 — Present</span>
+              <span>Nov 2025 – Present</span>
             </div>
             <ul>
               <li>
@@ -63,7 +63,7 @@ export default function ResumePage() {
                 GRAMMYs and the CBS fall schedule rollout. Wrote live captions
                 and paid-promo dark posts under partner brief for 6+ paid
                 partnerships including Allstate (Olivia Dean, Best New
-                Artist), IBM watsonx (Jelly Roll red carpet, GRAMMY IQ), and
+                Artist), IBM watsonx (Teddy Swims red carpet, GRAMMY IQ), and
                 Ulta Beauty (Addison Rae).
               </li>
               <li>
@@ -93,7 +93,7 @@ export default function ResumePage() {
                 <em>Social Media Manager</em>,{" "}
                 <strong>Two Tomatoes Records · Laurie Berkner Band</strong>
               </span>
-              <span>Jul 2024 — Oct 2025</span>
+              <span>Jul 2024 – Oct 2025</span>
             </div>
             <ul>
               <li>
@@ -127,7 +127,7 @@ export default function ResumePage() {
                 <em>Volunteer Leadership (Coordinator → Manager)</em>,{" "}
                 <strong>Children&apos;s Media Association</strong>
               </span>
-              <span>Jan 2023 — Feb 2026</span>
+              <span>Jan 2023 – Feb 2026</span>
             </div>
             <ul>
               <li>
@@ -158,7 +158,7 @@ export default function ResumePage() {
                 <em>TV Development / Current Series Intern</em>,{" "}
                 <strong>DreamWorks Animation</strong>
               </span>
-              <span>Jun 2022 — Sept 2022</span>
+              <span>Jun 2022 – Sept 2022</span>
             </div>
             <ul>
               <li>
@@ -180,7 +180,7 @@ export default function ResumePage() {
               <span>
                 <em>Development Intern</em>, <strong>Milojo Productions</strong>
               </span>
-              <span>Jan 2022 — May 2022</span>
+              <span>Jan 2022 – May 2022</span>
             </div>
             <ul>
               <li>
@@ -198,7 +198,7 @@ export default function ResumePage() {
                 <em>Creative Careers Marketing Cohort</em>,{" "}
                 <strong>Warner Bros. Discovery</strong>
               </span>
-              <span>Mar 2022 — May 2022</span>
+              <span>Mar 2022 – May 2022</span>
             </div>
             <ul>
               <li>
@@ -217,7 +217,7 @@ export default function ResumePage() {
                 <em>Pre-Production Intern</em>,{" "}
                 <strong>Inner Child Productions</strong>
               </span>
-              <span>Sept 2021 — Jan 2022</span>
+              <span>Sept 2021 – Jan 2022</span>
             </div>
             <ul>
               <li>
@@ -232,7 +232,7 @@ export default function ResumePage() {
         <section>
           <h2>Education</h2>
           <p className="resume-line">
-            <strong>New York University</strong> — New York, NY &nbsp;&nbsp;
+            <strong>New York University</strong> · New York, NY &nbsp;&nbsp;
             Tisch School of the Arts | BFA, Dramatic Writing
             <br />
             Honors: <em>magna cum laude</em> &nbsp;&nbsp; Minors: Comedy
