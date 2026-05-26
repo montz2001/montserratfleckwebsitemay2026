@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   // Static export — output goes to `out/`, served by nginx in production.
   // No Node.js runtime needed on the server.
   output: "export",
+  // nginx redirects /resume -> /resume/, so emit /resume/index.html
+  // rather than /resume.html.
+  trailingSlash: true,
   images: {
     // next/image optimization requires a server; use unoptimized for static export.
     unoptimized: true,
