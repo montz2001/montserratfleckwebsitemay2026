@@ -119,16 +119,16 @@ const stats: { value: string; label: ReactNode; context?: string }[] = [
   {
     value: "4M+",
     label: "Engagements across owned social during the Marshals campaign window",
-    context: "Came in above the engagement range you'd expect on a launch like this.",
+    context: "Above the typical engagement range for a launch this size.",
   },
   {
     value: "5.3M",
     label: <><ThreadsLink handle="spongebob" /> Threads views in 90 days. Strategy, copy, and community: all mine.</>,
-    context: "Well past the quarterly view ceiling you'd expect on a verified brand account.",
+    context: "Well past the quarterly view ceiling for a verified brand account.",
   },
   {
     value: "+218K",
-    label: <>New <ThreadsLink handle="garfield" /> Threads followers in the same window</>,
+    label: <>New <ThreadsLink handle="garfield" /> Threads followers in 90 days</>,
     context: "All organic growth.",
   },
   {
@@ -139,7 +139,7 @@ const stats: { value: string; label: ReactNode; context?: string }[] = [
   {
     value: "2×",
     label: "Follower growth across FB, IG & TikTok for the Laurie Berkner Band",
-    context: "Most legacy artist accounts grow 5–15% a year. I doubled in three quarters.",
+    context: "Most legacy artist accounts grow 5–15% a year. I doubled the total in three quarters.",
   },
 ];
 
@@ -187,7 +187,7 @@ const threads = {
 const marshals = {
   headline: "500+ posts. 200M+ views. 4M+ engagements.",
   blurb:
-    "Marshals was a coordinated Paramount One launch across Marshals, CBS, Paramount+ International, and Paramount Support handles. The window ran from the November teaser trailer through the March linear premiere, across nine international markets. Most of the posts in those numbers, I sent. That's the scheduling, the copy, the QC, the cross-account coordination, and the IG collab approvals.",
+    "Marshals was a coordinated Paramount One launch across Marshals, CBS, Paramount+ International, and Paramount Support handles. The window ran from the November teaser trailer through the March linear premiere, across nine international markets. I sent most of the posts in those numbers, owning the scheduling, copy, QC, cross-account coordination, and IG collab approvals.",
   amplification: [
     { account: "Marshals", posts: "260+", views: "130M+", eng: "2.5M+" },
     { account: "Paramount+ International (9 markets)", posts: "220+", views: "45M+", eng: "700K+" },
@@ -208,9 +208,9 @@ const marshals = {
         "Collab posts with Luke Grimes, Yellowstone, CBS, and Paramount+ averaged ~42K engagements. Non-collab posts averaged ~6K. I owned the approval workflow across all four talent and account teams.",
     },
     {
-      title: "Press wave: top post hit 500K+ views",
+      title: "Press wave: 500K+ views across placements",
       body:
-        "Coordinated red-carpet press across Entertainment Tonight, MTV, CMT, CBS Mornings, and Allegedly Speaking. ET averaged the highest at ~12K. One TikTok hit ~34K.",
+        "Coordinated red-carpet press across Entertainment Tonight, MTV, CMT, CBS Mornings, and Allegedly Speaking. ET led the averages at ~12K per post, with one TikTok peaking at ~34K. Aggregated across every placement, the press wave cleared 500K+ views.",
     },
   ],
 };
@@ -859,15 +859,15 @@ export default function Home() {
         </p>
         <h1 className="font-serif text-[2.25rem] sm:text-6xl md:text-7xl leading-[1.05] tracking-tight max-w-5xl">
           I write the post, send the post, and{" "}
-          <span className="gradient-text">
-            live in the comments. Not in a healthy way.
-          </span>
+          <span className="gradient-text">live in the comments.</span>{" "}
+          Not in a healthy way.
         </h1>
         <p className="mt-7 max-w-xl text-base sm:text-lg text-[var(--foreground)]/75 leading-relaxed">
-          I&apos;m the demo your algorithm is optimizing for. I&apos;m a
-          social strategist and writer at <strong>Paramount</strong>,
-          deciding how Nickelodeon, CBS, SpongeBob, Star Trek, Garfield, TMNT,
-          and Avatar sound online. I built the Threads playbook for the roster.
+          I&apos;m a social strategist and writer at{" "}
+          <strong>Paramount</strong>, deciding how Nickelodeon, CBS, SpongeBob,
+          Star Trek, Garfield, TMNT, and Avatar sound online. I built the
+          Threads playbook across the franchise portfolio. Also: I&apos;m the
+          demo your algorithm is optimizing for.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
@@ -1367,7 +1367,7 @@ export default function Home() {
             className="w-2/3 max-w-[240px] md:w-full md:max-w-none h-auto border border-[var(--rule)]"
           />
           <div>
-            <span className="eyebrow">About me</span>
+            <span className="eyebrow">Who I am</span>
             <h2 className="font-serif text-4xl sm:text-5xl mb-6">About me.</h2>
             <div className="space-y-5 text-lg text-[var(--foreground)]/85 leading-relaxed">
               <p>

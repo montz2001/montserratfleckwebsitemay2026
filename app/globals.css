@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f1e8d8;       /* Eggshell */
+  --background: #f6eddb;       /* Eggshell */
   --foreground: #4f464e;       /* Taupe Grey */
   --ink: #08080a;              /* Black, for emphasis */
   --accent: #e64a53;           /* Lobster Pink — primary */
