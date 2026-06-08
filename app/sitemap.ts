@@ -8,18 +8,22 @@ const SITE_URL =
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : "https://montserratfleck.com");
 
+// Hardcoded so lastmod only changes when the page content meaningfully changes,
+// not on every build. Bump these dates when you ship a real content update.
+const HOME_LAST_MOD = "2026-06-08";
+const RESUME_LAST_MOD = "2026-06-08";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
   return [
     {
       url: `${SITE_URL}/`,
-      lastModified: now,
+      lastModified: HOME_LAST_MOD,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${SITE_URL}/resume`,
-      lastModified: now,
+      url: `${SITE_URL}/resume/`,
+      lastModified: RESUME_LAST_MOD,
       changeFrequency: "monthly",
       priority: 0.8,
     },

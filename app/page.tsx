@@ -244,7 +244,7 @@ const voice: {
         caption: "\"definitely forgetting the Diet Dr. Kelp\"",
         sub: "Squidward weather-and-work meme",
         url: "https://www.instagram.com/p/DT-ZVYckl4B/",
-        thumb: "/voice/spongebob-diet-dr-kelp.jpg",
+        thumb: "/voice/spongebob-diet-dr-kelp.webp",
       },
       {
         caption: "\"the fandom has been cooking\"",
@@ -270,7 +270,7 @@ const voice: {
         caption: "\"let's see your crew in the comments!\"",
         sub: "Build Your Crew · community prompt",
         url: "https://www.instagram.com/p/DYUlhuZE7s5/",
-        thumb: "/voice/startrek-build-your-crew.jpg",
+        thumb: "/voice/startrek-build-your-crew.webp",
       },
       {
         caption: "\"Your star sign is your Star Trek character\"",
@@ -294,7 +294,7 @@ const voice: {
         caption: "\"Celebrating the brilliance, courage, and legacy of the women who boldly go.\"",
         sub: "Fan-art carousel · women-of-Trek",
         url: "https://www.instagram.com/p/DV1ehxKj9WY/",
-        thumb: "/voice/startrek-women-of-trek.jpg",
+        thumb: "/voice/startrek-women-of-trek.webp",
       },
     ],
   },
@@ -430,7 +430,7 @@ const voice: {
         caption: "\"The tribe has spoken! Here's a look at your CBS Fall 2026 schedule that's worth watchin' for 🔥\"",
         sub: "Brainstorm-to-post · Survivor-style tribal placard reveal w/ Jeff Probst · co-posted across @cbstv, @survivorcbs, @marshalscbs, @firesheriffcbs, @trackercbs & @paramountplus",
         url: "https://www.instagram.com/p/DXKlR3vEhPb/",
-        thumb: "/voice/cbs-fall-schedule.jpg",
+        thumb: "/voice/cbs-fall-schedule.webp",
       },
     ],
   },
@@ -868,14 +868,17 @@ export default function Home() {
 
       {/* HERO */}
       <section className="mx-auto max-w-5xl px-6 pt-12 pb-20 sm:pt-16 sm:pb-24">
+        <h1 className="sr-only">
+          Montserrat Fleck · Social Media Manager (NYC) · Paramount TV Marketing
+        </h1>
         <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-[var(--accent-2)] mb-5">
           Paramount social · Tony Awards · GRAMMYs · CBS · Nickelodeon · SpongeBob · Star Trek
         </p>
-        <h1 className="font-serif text-[2.25rem] sm:text-6xl md:text-7xl leading-[1.05] tracking-tight max-w-5xl">
+        <h2 className="font-serif text-[2.25rem] sm:text-6xl md:text-7xl leading-[1.05] tracking-tight max-w-5xl">
           I write the post, send the post, and{" "}
           <span className="gradient-text">live in the comments.</span>{" "}
           Not in a healthy way.
-        </h1>
+        </h2>
         <p className="mt-7 max-w-xl text-base sm:text-lg text-[var(--foreground)]/75 leading-relaxed">
           I&apos;m a social strategist and writer at{" "}
           <strong>Paramount</strong>, deciding how Nickelodeon, CBS, SpongeBob,
@@ -1026,7 +1029,7 @@ export default function Home() {
       </section>
 
       {/* THREADS CASE STUDY */}
-      <section className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
+      <section id="threads" className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
         <div className="mb-3">
           <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent-2)]">
             Featured platform
@@ -1232,7 +1235,7 @@ export default function Home() {
                   {hasPfp ? (
                     <Image
                       src={bust(pfpSrc)}
-                      alt=""
+                      alt={`${b.brand} (@${b.handle}) profile photo`}
                       width={48}
                       height={48}
                       className="w-12 h-12 rounded-full object-cover bg-[var(--foreground)]/5 border border-[var(--rule)] shrink-0"
@@ -1307,20 +1310,24 @@ export default function Home() {
                             /* eslint-disable-next-line @next/next/no-img-element */
                             <img
                               src={bust(thumb)}
-                              alt=""
+                              alt={`${b.brand} post: ${p.caption}`}
                               loading="lazy"
                               decoding="async"
-                              className="block w-full max-w-sm rounded-md border border-[var(--rule)]"
+                              width={1080}
+                              height={1350}
+                              className="block w-full max-w-sm h-auto rounded-md border border-[var(--rule)]"
                             />
                           )}
                           {commentsShot && (
                             /* eslint-disable-next-line @next/next/no-img-element */
                             <img
                               src={bust(commentsShot)}
-                              alt=""
+                              alt={`Audience replies to ${b.brand}: ${p.caption}`}
                               loading="lazy"
                               decoding="async"
-                              className="block w-full max-w-sm rounded-md border border-[var(--rule)]"
+                              width={1080}
+                              height={1350}
+                              className="block w-full max-w-sm h-auto rounded-md border border-[var(--rule)]"
                             />
                           )}
                           <span className="block text-xs text-[var(--foreground)]/55 underline decoration-[var(--accent)]/40 underline-offset-4">
@@ -1384,7 +1391,7 @@ export default function Home() {
       <section id="about" className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
         <div className="grid md:grid-cols-[260px_1fr] gap-10 items-start mb-12">
           <Image
-            src={bust("/webphotos/oscars.JPG")}
+            src={bust("/webphotos/oscars.webp")}
             alt="Montserrat Fleck at the Oscars"
             width={260}
             height={350}
@@ -1552,7 +1559,7 @@ export default function Home() {
       </section>
 
       <footer className="mx-auto max-w-5xl w-full px-6 py-10 text-sm text-[var(--foreground)]/60 border-t border-[var(--rule)] flex flex-wrap items-center justify-between gap-3">
-        <span>© {new Date().getFullYear()} Montserrat Fleck · New York, NY</span>
+        <span>© 2026 Montserrat Fleck · New York, NY</span>
         <a href="#main" className="hover:text-[var(--accent)] transition-colors no-print">
           Back to top ↑
         </a>

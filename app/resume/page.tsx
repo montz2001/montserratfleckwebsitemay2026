@@ -1,27 +1,66 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
+import ResumeActions from "./ResumeActions";
 import "./resume.css";
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://montserratfleck.com");
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: `${SITE_URL}/`,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Resume",
+      item: `${SITE_URL}/resume`,
+    },
+  ],
+};
+
+export const metadata: Metadata = {
+  title: "Resume · Social Media Manager, NYC",
+  description:
+    "Resume of Montserrat Fleck, Social Media Manager (NYC). Paramount TV Marketing franchises team: 200M+ views on the Marshals premiere rollout, +218K @garfield followers in 90 days, 6+ paid partnerships at the 68th GRAMMYs (Allstate, IBM watsonx, Ulta).",
+  alternates: { canonical: "/resume" },
+  openGraph: {
+    type: "profile",
+    url: "/resume",
+    title: "Montserrat Fleck · Resume (Social Media Manager, NYC)",
+    description:
+      "Paramount TV Marketing franchises team: Threads playbook for @garfield, @spongebob, @tmnt, @startrek; Marshals premiere social rollout; 68th GRAMMYs paid partnerships.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Montserrat Fleck · Resume (Social Media Manager, NYC)",
+    description:
+      "Paramount TV Marketing franchises team: Threads playbook, live event coverage, brand voice across the franchise roster.",
+  },
+};
 
 export default function ResumePage() {
   return (
     <>
-      <div className="resume-actions no-print">
-        <Link href="/" className="resume-back">
-          ← Back to portfolio
-        </Link>
-        <button
-          type="button"
-          onClick={() => window.print()}
-          className="resume-print-btn"
-        >
-          Save as PDF
-        </button>
-      </div>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <ResumeActions />
 
       <article className="resume-doc">
         <header className="resume-header">
-          <h1>Montserrat Fleck</h1>
+          <h1>Montserrat Fleck · Resume (Social Media Manager, NYC)</h1>
           <p className="resume-contact">
             (425) 877-MONTI &nbsp;·&nbsp; monti@flexgames.com &nbsp;·&nbsp;{" "}
             <a href="https://www.linkedin.com/in/montserratfleck">LinkedIn</a>
@@ -41,15 +80,17 @@ export default function ResumePage() {
             </div>
             <ul>
               <li>
-                Built and run the Threads playbook end-to-end for @garfield,
-                @spongebob, @tmnt, @startrek, and @avatarlegends. Strategy,
-                per-brand voice, copy, and community. @garfield: 3.8M views
-                and +218K new followers in 90 days, no paid spend.
+                Built and run the{" "}
+                <Link href="/#threads">Threads playbook</Link> end-to-end for
+                @garfield, @spongebob, @tmnt, @startrek, and @avatarlegends.
+                Strategy, per-brand voice, copy, and community. @garfield:
+                3.8M views and +218K new followers in 90 days, no paid spend.
               </li>
               <li>
-                Hands-on for the bulk of the Marshals premiere social rollout:
-                500+ posts across Marshals, CBS, Paramount+ International, and
-                Paramount Support handles. Totals: 200M+ views, 4M+
+                Hands-on for the bulk of the{" "}
+                <Link href="/#work">Marshals premiere social rollout</Link>:
+                500+ posts across Marshals, CBS, Paramount+ International,
+                and Paramount Support handles. Totals: 200M+ views, 4M+
                 engagements.
               </li>
               <li>
@@ -59,12 +100,12 @@ export default function ResumePage() {
                 engagements vs. ~6K on non-collab.
               </li>
               <li>
-                Partnered with a senior IP marketing manager on the 68th
-                GRAMMYs and the CBS fall schedule rollout. Wrote live captions
-                and paid-promo dark posts under partner brief for 6+ paid
-                partnerships including Allstate (Olivia Dean, Best New
-                Artist), IBM watsonx (Teddy Swims red carpet, GRAMMY IQ), and
-                Ulta Beauty (Addison Rae).
+                Partnered with a senior IP marketing manager on the{" "}
+                <Link href="/#paid">68th GRAMMYs</Link> and the CBS fall
+                schedule rollout. Wrote live captions and paid-promo dark
+                posts under partner brief for 6+ paid partnerships including
+                Allstate (Olivia Dean, Best New Artist), IBM watsonx (Teddy
+                Swims red carpet, GRAMMY IQ), and Ulta Beauty (Addison Rae).
               </li>
               <li>
                 Cover international publishing across 9 markets (AU, CA, UK,

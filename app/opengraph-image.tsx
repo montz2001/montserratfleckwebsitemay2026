@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const dynamic = "force-static";
 export const alt =
@@ -6,7 +8,11 @@ export const alt =
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  const instrumentSerif = await readFile(
+    join(process.cwd(), "assets/InstrumentSerif-Regular.ttf"),
+  );
+
   return new ImageResponse(
     (
       <div
@@ -20,7 +26,7 @@ export default function OpengraphImage() {
           background:
             "linear-gradient(135deg, #f1e8d8 0%, #f1e8d8 55%, #ecd9c2 100%)",
           color: "#4f464e",
-          fontFamily: "serif",
+          fontFamily: "Instrument Serif",
         }}
       >
         <div
@@ -117,6 +123,16 @@ export default function OpengraphImage() {
         </div>
       </div>
     ),
-    size,
+    {
+      ...size,
+      fonts: [
+        {
+          name: "Instrument Serif",
+          data: instrumentSerif,
+          style: "normal",
+          weight: 400,
+        },
+      ],
+    },
   );
 }
