@@ -565,7 +565,17 @@ const work: {
           Coordinator. That covers publishing, social strategy, asset
           ideation (and occasional creation), community management and
           growth strategy for Nickelodeon, Nickelodeon Family, CBS, TMNT,
-          Avatar: The Last Airbender, SpongeBob, Garfield and Star Trek.
+          Avatar: The Last Airbender, SpongeBob, Garfield, Star Trek, and{" "}
+          <a
+            href="https://www.instagram.com/thebradybunch/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-[var(--accent)]/40 underline-offset-4 hover:decoration-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+          >
+            @thebradybunch
+          </a>{" "}
+          (just took it over: short-form strategy and voice rollout in
+          progress).
         </p>
         <p className="mt-4">
           Threads I run on my own. That's the strategy, the per-brand voice,
@@ -771,6 +781,7 @@ const brands: { name: string; src: string }[] = [
   { name: "Avatar: The Last Airbender", src: "/brands/atla.png" },
   { name: "GRAMMYs", src: "/brands/grammys.png" },
   { name: "Tony Awards", src: "/brands/tony.png" },
+  { name: "The Brady Bunch", src: "/brands/brady.png" },
   { name: "SpongeBob: Search for SquarePants", src: "/brands/sb%20s4sp.png" },
   { name: "DreamWorks", src: "/brands/dreamworks.png" },
   { name: "Laurie Berkner Band", src: "/brands/berkner.png" },
