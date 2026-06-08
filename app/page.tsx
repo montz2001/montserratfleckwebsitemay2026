@@ -184,39 +184,6 @@ const threads = {
   ],
 };
 
-const tonys = {
-  headline: "137+ posts. 20M+ views. One night live.",
-  blurb:
-    "I covered the 2026 Tony Awards live for CBS social: publishing and copywriting in the room while the show was on the air. Over 137 posts went out across the red carpet, the broadcast, and the after-party window. Captions written in real time, paired to assets as they came in, and queued to land while the moment was still on screen.",
-  topPosts: [
-    { v: "3.5M", l: "2026 Tony Awards opening number" },
-    { v: "2.7M", l: "All That Jazz" },
-    { v: "2.6M", l: "P!NK x Darren Criss" },
-    { v: "1.8M", l: "In Memoriam" },
-    { v: "1.2M", l: "Roxie Morton x Cell Block Tango" },
-    { v: "752K", l: "\"the pants came off\"" },
-    { v: "574K", l: "Mamma Morton returns" },
-    { v: "247K", l: "Titanique at the Tony Awards" },
-  ],
-  wins: [
-    {
-      title: "Live captions that matched the moment",
-      body:
-        "Wrote and shipped while the show was airing. The opening number went up while the audience was still cheering, the Cell Block Tango clip landed mid-applause, and the red-carpet bits hit before talent reached their seats. Top eight posts cleared 13M views combined.",
-    },
-    {
-      title: "Voice that read like a fan, not a feed",
-      body:
-        "\"the pants came off,\" \"where did you get that microphone?,\" and \"a haunting at the Tony Awards\" all came from watching the broadcast and writing the way fans were already texting about it. The line between caption and group chat is where the engagement lives.",
-    },
-    {
-      title: "Full-night coverage, not just highlights",
-      body:
-        "Red carpet portraits, broadcast moments, In Memoriam, performance clips, winner reactions, and CBS Mornings the morning after. 137+ posts inside a 24-hour window, written to the brief and to the room.",
-    },
-  ],
-};
-
 const marshals = {
   headline: "500+ posts. 200M+ views. 4M+ engagements.",
   blurb:
@@ -979,74 +946,6 @@ export default function Home() {
               )}
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* TONY AWARDS 2026 CASE STUDY */}
-      <section className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
-        <div className="border-t-2 border-b-2 border-[var(--foreground)] py-10 sm:py-14">
-          <div className="mb-4 flex items-center gap-4 flex-wrap">
-            <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent)]">
-              Featured campaign · Live
-            </span>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={bust("/brands/tony.png")}
-              alt="Tony Awards"
-              width={120}
-              height={56}
-              className="h-8 w-auto object-contain brand-logo"
-            />
-          </div>
-          <h2 className="font-serif text-4xl sm:text-6xl leading-[1.05] mb-6">
-            {tonys.headline}
-          </h2>
-          <p className="text-[var(--foreground)]/80 text-lg max-w-3xl leading-relaxed">
-            {tonys.blurb}
-          </p>
-
-          {/* Top posts */}
-          <div className="mt-10">
-            <h3 className="text-xs uppercase tracking-[0.25em] text-[var(--foreground)]/60 mb-5">
-              Top performers (views)
-            </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {tonys.topPosts.map((p) => (
-                <div
-                  key={p.l}
-                  className="rounded-2xl bg-[var(--foreground)]/[0.04] p-4 border border-black/5"
-                >
-                  <div className="font-serif text-2xl gradient-text leading-none">
-                    {p.v}
-                  </div>
-                  <p className="text-[10px] uppercase tracking-[0.04em] text-[var(--foreground)]/60 mt-2 leading-snug">
-                    {p.l}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Wins */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-[var(--rule)]">
-            {tonys.wins.map((w, i) => (
-              <div
-                key={w.title}
-                className={`py-6 md:py-8 md:px-6 ${i > 0 ? "md:border-l border-[var(--rule)] border-t md:border-t-0" : ""}`}
-              >
-                <h3 className="font-serif text-xl text-[var(--accent)] mb-2">
-                  {w.title}
-                </h3>
-                <p className="text-sm text-[var(--foreground)]/75 leading-relaxed">
-                  {w.body}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <p className="text-xs text-[var(--foreground)]/50 mt-8 italic">
-            Views from in-platform insights on @cbstv. Aggregate figures shown.
-          </p>
         </div>
       </section>
 
