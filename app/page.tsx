@@ -889,6 +889,16 @@ export default function Home() {
       </section>
 
       {/* BRAND MARQUEE */}
+      {/* Preload every logo so the marquee never reveals an empty slot */}
+      {brands.map((b) => (
+        <link
+          key={b.src}
+          rel="preload"
+          as="image"
+          href={bust(b.src)}
+          fetchPriority="high"
+        />
+      ))}
       <section
         aria-label="Brands I've worked with"
         className="border-y border-[var(--rule)] py-8 overflow-hidden no-print"
@@ -902,7 +912,8 @@ export default function Home() {
                 alt=""
                 width={500}
                 height={233}
-                decoding="async"
+                loading="eager"
+                fetchPriority="high"
                 className="h-16 sm:h-30 w-auto object-contain brand-logo"
               />
               <span
