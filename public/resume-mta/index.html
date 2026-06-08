@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Montserrat Fleck — Transit Map Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@400;500;600;700&display=swap');
+
+:root{
+  --p:#0039A6;   /* paramount - subway blue (A/C/E) */
+  --t:#FF6319;   /* two tomatoes - orange (B/D/F/M) */
+  --c:#00933C;   /* cma - green (4/5/6) */
+  --d:#B933AD;   /* dreamworks - purple (7) */
+  --w:#00ADD0;   /* wbd - teal turquoise */
+  --gray:#A7A9AC;
+  --paper:#ffffff;
+  --bg:#e8e6df;
+  --ink:#0a0a0a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:var(--bg);
+  font-family:'Archivo',sans-serif;
+  width:1100px;margin:0 auto;
+  color:var(--ink);
+}
+.page{padding:36px 44px 44px;position:relative;}
+
+/* subtle map grid */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:linear-gradient(rgba(0,0,0,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.025) 1px,transparent 1px);
+  background-size:40px 40px;pointer-events:none;z-index:0;
+}
+.page{z-index:1;}
+
+/* ── HEADER ── */
+.hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px;}
+.name{font-size:58px;font-weight:900;letter-spacing:-2px;line-height:.92;text-transform:uppercase;}
+.name .l2{color:var(--p);}
+.tagline{font-family:'Archivo Narrow';font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#555;margin-top:6px;}
+.contact{text-align:right;font-family:'Archivo Narrow';font-size:13px;font-weight:500;line-height:1.85;color:#333;}
+.contact b{font-weight:700;color:var(--ink);}
+
+/* MTA-style multi-stripe divider */
+.stripe{height:9px;display:flex;margin:14px 0 8px;border-radius:5px;overflow:hidden;}
+.stripe i{flex:1;}
+
+/* ── ROUTE LEGEND (the "key") ── */
+.legend{
+  display:flex;gap:8px;flex-wrap:wrap;align-items:center;
+  background:var(--paper);border:2px solid var(--ink);border-radius:8px;
+  padding:9px 13px;margin-bottom:26px;
+}
+.legend-lbl{font-family:'Archivo Narrow';font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#777;margin-right:4px;}
+.leg{display:flex;align-items:center;gap:6px;padding-right:6px;}
+.bullet{
+  width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:800;font-size:13px;flex-shrink:0;
+}
+.leg span{font-family:'Archivo Narrow';font-size:12px;font-weight:600;color:#333;}
+
+/* ── MAP ── */
+.map{position:relative;}
+.svg-layer{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+
+.stations{position:relative;z-index:2;}
+.srow{display:grid;grid-template-columns:72px 1fr;align-items:flex-start;}
+
+.badge-col{display:flex;justify-content:center;padding-top:14px;}
+.bullet-big{
+  width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:900;font-size:20px;border:4px solid var(--ink);position:relative;z-index:5;
+  box-shadow:0 2px 0 rgba(0,0,0,.15);
+}
+.bullet-big.sm{width:38px;height:38px;font-size:16px;border-width:3px;}
+
+.card{
+  background:var(--paper);border:2.5px solid var(--ink);border-radius:10px;
+  padding:15px 18px 16px;margin-bottom:20px;position:relative;
+  box-shadow:5px 5px 0 rgba(0,0,0,.08);
+}
+.card::after{
+  content:'';position:absolute;left:-13px;top:24px;width:13px;height:3px;background:var(--accent,#000);z-index:1;
+}
+.tab{
+  position:absolute;top:-2.5px;left:-2.5px;bottom:-2.5px;width:9px;
+  background:var(--accent,#000);border-radius:10px 0 0 10px;
+}
+.ctitle{font-size:19px;font-weight:800;letter-spacing:-.4px;line-height:1.05;}
+.ctitle .light{font-weight:400;font-size:14px;color:#999;}
+.csub{font-family:'Archivo Narrow';font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent,#666);margin-top:3px;}
+.bullets{list-style:none;margin-top:10px;}
+.bullets li{font-size:12.5px;line-height:1.5;color:#1c1c1c;padding-left:15px;position:relative;margin-bottom:5px;font-weight:400;}
+.bullets li::before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--accent,#000);}
+.pill{display:inline-block;font-size:10px;font-weight:700;padding:1.5px 7px;border-radius:10px;color:#fff;margin-left:3px;vertical-align:middle;font-family:'Archivo Narrow';letter-spacing:.03em;}
+
+/* ── BOTTOM PANELS ── */
+.bottom{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:8px;position:relative;z-index:2;}
+.panel{border:2.5px solid var(--ink);border-radius:10px;background:var(--paper);overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.08);}
+.phdr{padding:9px 14px;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:8px;}
+.phdr .dot{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;}
+.pbody{padding:13px 14px;}
+.pbody p{font-size:12px;line-height:1.55;color:#1c1c1c;}
+.cat{font-family:'Archivo Narrow';font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:5px;margin-top:10px;}
+.cat:first-child{margin-top:0;}
+.tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tag{font-family:'Archivo Narrow';font-size:11px;font-weight:500;border:1.5px solid #ccc;border-radius:4px;padding:2px 8px;color:#333;background:#faf9f5;}
+.edu-school{font-size:18px;font-weight:800;letter-spacing:-.3px;line-height:1;}
+.honor{display:inline-block;background:#FCCC0A;border:2px solid var(--ink);border-radius:4px;font-size:10px;font-weight:800;padding:2px 9px;letter-spacing:.05em;margin-top:8px;}
+.transfer-key{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
+.tk{display:inline-flex;align-items:center;gap:5px;font-family:'Archivo Narrow';font-size:10.5px;font-weight:700;color:#fff;padding:3px 9px 3px 4px;border-radius:14px;}
+.tk .d{width:15px;height:15px;border-radius:50%;background:rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;}
+
+.bg-p{background:var(--p);} .bg-t{background:var(--t);} .bg-c{background:var(--c);}
+.bg-d{background:var(--d);} .bg-w{background:var(--w);} .bg-ink{background:var(--ink);}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="hdr">
+    <div>
+      <div class="name">Montserrat <span class="l2">Fleck</span></div>
+      <div class="tagline">Brand · Social · Partnerships · Production</div>
+    </div>
+    <div class="contact">
+      <b>(425) 877-MONTI</b><br>
+      monti@flexgames.com<br>
+      montserratfleck.com<br>
+      LinkedIn / @montifleck
+    </div>
+  </div>
+
+  <div class="stripe">
+    <i style="background:var(--p)"></i><i style="background:var(--t)"></i><i style="background:var(--c)"></i><i style="background:var(--d)"></i><i style="background:var(--w)"></i>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <span class="legend-lbl">Lines</span>
+    <div class="leg"><div class="bullet" style="background:var(--p)">P</div><span>Paramount</span></div>
+    <div class="leg"><div class="bullet" style="background:var(--t)">T</div><span>Two Tomatoes</span></div>
+    <div class="leg"><div class="bullet" style="background:var(--c)">C</div><span>Children's Media Assoc.</span></div>
+    <div class="leg"><div class="bullet" style="background:var(--d)">D</div><span>DreamWorks</span></div>
+    <div class="leg"><div class="bullet" style="background:var(--w)">W</div><span>Warner Bros. Discovery</span></div>
+  </div>
+
+  <!-- MAP -->
+  <div class="map" id="map">
+    <svg class="svg-layer" id="svg"></svg>
+    <div class="stations" id="stations">
+
+      <div class="srow">
+        <div class="badge-col"><div class="bullet-big" id="b0" style="background:var(--p)">P</div></div>
+        <div class="card" style="--accent:var(--p)"><div class="tab"></div>
+          <div class="ctitle">Paramount — Franchises Social</div>
+          <div class="csub">Social Coordinator · Nov 2025 — Present</div>
+          <ul class="bullets">
+            <li>Built and run the Threads playbook end-to-end for @garfield, @spongebob, @tmnt, @startrek, and @avatarlegends. Strategy, per-brand voice, copy, and community.
+              <span class="pill bg-p">3.8M views</span><span class="pill bg-p">+218K followers / 90 days</span><span class="pill" style="background:#888">no paid spend</span></li>
+            <li>Hands-on for the bulk of the Marshals premiere social rollout: 500+ posts across Marshals, CBS, Paramount+ International, and Paramount Support.
+              <span class="pill bg-p">200M+ views</span><span class="pill bg-p">4M+ engagements</span></li>
+            <li>Owned the IG Collab approval workflow across four talent and account teams. Collab posts averaged ~42K engagements vs. ~6K on non-collab.</li>
+            <li>Partnered with a senior IP marketing manager on the 68th GRAMMYs and the CBS fall schedule rollout. Wrote live captions and paid-promo dark posts for 6+ paid partnerships including Allstate (Olivia Dean, Best New Artist), IBM watsonx (Jelly Roll red carpet, GRAMMY IQ), and Ulta Beauty (Addison Rae).</li>
+            <li>Cover international publishing across 9 markets (AU, CA, UK, FR, DE, BR, AR, MX, IT) plus English publishing across every Nickelodeon handle. No missed slots.</li>
+            <li>Manage moderation and brand safety across the kid-facing portfolio under COPPA. Worked alongside enterprise vendors including ZeroFox on impersonation monitoring, harmful-content flags, and takedown queues.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="srow">
+        <div class="badge-col"><div class="bullet-big" id="b1" style="background:var(--t)">T</div></div>
+        <div class="card" style="--accent:var(--t)"><div class="tab"></div>
+          <div class="ctitle">Two Tomatoes Records <span class="light">· Laurie Berkner Band</span></div>
+          <div class="csub">Social Media Manager · Jul 2024 — Oct 2025</div>
+          <ul class="bullets">
+            <li>Doubled the band's following across Facebook, Instagram, and TikTok, reaching nearly 300K followers and 2M+ video views in the first quarter.
+              <span class="pill bg-t">300K followers</span><span class="pill bg-t">2M+ views / Q1</span></li>
+            <li>Created and led viral campaigns (Berkner Breaks After Dark, The Berkner Bracket, Let's Write a Song) driving multi-generational engagement from millennial parents to Gen Alpha kids.</li>
+            <li>Directed creative partnerships with Tonies, Kidz Bop, Bjorem Speech, Yoto Cards, and YouTube Kids; activated TikTok Shop and supported Shopify DTC sales with targeted IG Story boosts.</li>
+            <li>Increased ad performance 25 to 30 percent through Meta Ads Manager, ManyChat flows, and audience-driven campaign testing. Hand moderation and community management across all platforms under COPPA.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="srow">
+        <div class="badge-col"><div class="bullet-big sm" id="b2" style="background:var(--c)">C</div></div>
+        <div class="card" style="--accent:var(--c)"><div class="tab"></div>
+          <div class="ctitle">Children's Media Association</div>
+          <div class="csub">Volunteer Coordinator → Manager · Jan 2023 — Feb 2026</div>
+          <ul class="bullets">
+            <li>Started as Global Engagement Coordinator, owning a weekly cross-channel social cadence across LinkedIn, Instagram, TikTok, Facebook, and Twitter. Promoted to Global Engagement Manager, then Global Operations Coordinator &amp; Email Manager.</li>
+            <li>Owned the WordPress backend, member support and renewals, NYC Storytime event logistics two years running, and internal systems (Airtable, Google Drive, Sheets). Community management for Women in Animation on Discord.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="srow">
+        <div class="badge-col"><div class="bullet-big sm" id="b3" style="background:var(--d)">D</div></div>
+        <div class="card" style="--accent:var(--d)"><div class="tab"></div>
+          <div class="ctitle">DreamWorks Animation</div>
+          <div class="csub">TV Development / Current Series Intern · Jun — Sep 2022</div>
+          <ul class="bullets">
+            <li>Selected as Intern Ambassador for the Summer 2022 cohort (30 interns), leading comms between Early Careers leadership, intern managers, and interns. Built a 200+ artist database and covered EA duties for Vanessa Taylor Sands.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="srow">
+        <div class="badge-col"><div class="bullet-big sm" id="b4" style="background:var(--w)">W</div></div>
+        <div class="card" style="--accent:var(--w)"><div class="tab"></div>
+          <div class="ctitle">Warner Bros. Discovery <span class="light">+ Milojo Productions</span></div>
+          <div class="csub">Creative Careers Marketing Cohort &amp; Development Intern · Jan — May 2022</div>
+          <ul class="bullets">
+            <li>WBD: Synthesized interviewer feedback, executive briefings, and market research into a Gen Z target customer profile and SWOT analysis. Built a social-led go-to-market strategy for discovery+ that fed into the Max + discovery+ integration pitch.</li>
+            <li>Milojo: Presented coverage reports on project viability to Kelly Ripa and Mark Consuelos' production company. Ran the company's Meta (IG, FB) and TikTok accounts.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bottom">
+      <div class="panel">
+        <div class="phdr bg-ink"><span class="dot" style="color:var(--ink)">E</span>Education</div>
+        <div class="pbody">
+          <div class="edu-school">New York University</div>
+          <p style="color:#666;margin-top:3px;font-size:11px">Tisch School of the Arts</p>
+          <p style="font-weight:700;margin-top:5px;font-size:13px">BFA, Dramatic Writing</p>
+          <p style="color:#666;margin-top:2px;font-size:11px">Minors: Comedy Writing · Child &amp; Adolescent Mental Health Studies</p>
+          <span class="honor">★ MAGNA CUM LAUDE</span>
+          <div class="transfer-key">
+            <div class="tk bg-p"><span class="d">P</span>Franchises</div>
+            <div class="tk bg-t"><span class="d">T</span>Music</div>
+            <div class="tk bg-c"><span class="d">C</span>Kids Media</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="phdr bg-p"><span class="dot" style="color:var(--p)">S</span>Skills &amp; Tools</div>
+        <div class="pbody">
+          <div class="cat">Social</div>
+          <div class="tags"><span class="tag">Sprinklr</span><span class="tag">Hootsuite</span><span class="tag">Meta Ads Manager</span><span class="tag">ManyChat</span><span class="tag">TikTok Shop</span></div>
+          <div class="cat">Creative</div>
+          <div class="tags"><span class="tag">Final Draft</span><span class="tag">Final Cut</span><span class="tag">Adobe CC</span><span class="tag">Canva</span><span class="tag">Shotgrid</span></div>
+          <div class="cat">Ops</div>
+          <div class="tags"><span class="tag">Airtable</span><span class="tag">ClickUp</span><span class="tag">Shopify</span><span class="tag">Monday</span><span class="tag">Google WS</span></div>
+          <div class="cat">Brand Safety</div>
+          <div class="tags"><span class="tag">COPPA</span><span class="tag">ZeroFox</span><span class="tag">Gen Alpha / YT Kids</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="phdr bg-t"><span class="dot" style="color:var(--t)">+</span>Beyond the Map</div>
+        <div class="pbody">
+          <div class="tags">
+            <span class="tag">Arts &amp; Crafts</span><span class="tag">Chameleons</span><span class="tag">Cornish Rexes</span><span class="tag">Interior Design</span><span class="tag">Kaiju</span><span class="tag">LEGO</span><span class="tag">Spreadsheeting Everything</span>
+          </div>
+          <div style="margin-top:13px;padding-top:11px;border-top:1.5px solid #e2e0d8">
+            <div class="cat" style="margin-top:0">Currently</div>
+            <p>Consulting for <b>Unpaint</b> (removable paint startup) — social strategy, content pillars, and influencer pipeline from the ground up.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+window.addEventListener('load',()=>{
+  const svg=document.getElementById('svg'),map=document.getElementById('map');
+  const R=map.getBoundingClientRect();
+  svg.setAttribute('width',map.offsetWidth);
+  svg.setAttribute('height',map.offsetHeight);
+  const ids=['b0','b1','b2','b3','b4'];
+  const cols=['#0039A6','#FF6319','#00933C','#B933AD','#00ADD0'];
+  const P=ids.map(id=>{const r=document.getElementById(id).getBoundingClientRect();
+    return{x:r.left-R.left+r.width/2,y:r.top-R.top+r.height/2,rad:r.width/2};});
+
+  // main weaving line through all stations
+  for(let i=0;i<P.length-1;i++){
+    const a=P[i],b=P[i+1];
+    const y1=a.y+a.rad+2,y2=b.y-b.rad-2;
+    const my=(y1+y2)/2;
+    // gentle S curve, alternating sway
+    const sway=(i%2===0)?14:-14;
+    const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d',`M${a.x},${y1} C${a.x+sway},${my-8} ${b.x-sway},${my+8} ${b.x},${y2}`);
+    path.setAttribute('stroke',cols[i+1]);
+    path.setAttribute('stroke-width','9');
+    path.setAttribute('fill','none');
+    path.setAttribute('stroke-linecap','round');
+    svg.appendChild(path);
+  }
+});
+</script>
+</body>
+</html>
