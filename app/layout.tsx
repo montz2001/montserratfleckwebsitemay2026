@@ -111,7 +111,7 @@ const jsonLd = {
         width: 260,
         height: 350,
       },
-      jobTitle: "Social Media Coordinator",
+      jobTitle: "Social Coordinator",
       description: DESCRIPTION,
       email: "mailto:monti@flexgames.com",
       worksFor: {
@@ -184,14 +184,6 @@ const jsonLd = {
       inLanguage: "en-US",
       publisher: { "@id": personId },
       about: { "@id": personId },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${SITE_URL}/?q={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
-      },
     },
     {
       "@type": "CreativeWork",
@@ -199,7 +191,7 @@ const jsonLd = {
       name: "Marshals premiere social rollout",
       headline:
         "Marshals (CBS) premiere social rollout — 500+ posts, 200M+ views, 4M+ engagements",
-      url: `${SITE_URL}/#work`,
+      url: `${SITE_URL}/#work-marshals`,
       creator: { "@id": personId },
       about: "Marshals (CBS) series premiere social media launch",
       datePublished: "2025-11",
@@ -305,13 +297,13 @@ const jsonLd = {
       "@id": `${SITE_URL}/#work-tonys`,
       name: "2026 Tony Awards live coverage",
       headline:
-        "78th Tony Awards live coverage — 137+ posts in 24 hours, 20M+ views, captions written and shipped from the room",
+        "79th Tony Awards live coverage — 137+ posts in 24 hours, 20M+ views, captions written and shipped from the room",
       url: `${SITE_URL}/#paid`,
       creator: { "@id": personId },
       about: "Live event coverage of the 2026 Tony Awards (CBS broadcast)",
       datePublished: "2026-06",
       keywords:
-        "Tony Awards 2026, 78th Tony Awards, CBS, live event coverage, Broadway, social media live coverage",
+        "Tony Awards 2026, 79th Tony Awards, CBS, live event coverage, Broadway, social media live coverage",
       interactionStatistic: [
         {
           "@type": "InteractionCounter",
@@ -357,7 +349,6 @@ export default function RootLayout({
         {children}
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </body>

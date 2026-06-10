@@ -5,6 +5,7 @@
   --foreground: #4f464e;       /* Taupe Grey */
   --ink: #08080a;              /* Black, for emphasis */
   --accent: #e64a53;           /* Lobster Pink — primary */
+  --accent-ink: #c23039;       /* Deepened lobster — AA-legible accent for small uppercase labels (4.7:1 on eggshell) */
   --accent-2: #50552d;         /* Olive Leaf — eyebrows / secondary */
   --accent-3: #ae7f4a;         /* Copper — hover / details */
   --soft: #bb9fcd;             /* Wisteria — soft panels */
@@ -143,7 +144,16 @@ section[id] {
     color: #111 !important;
     background: none !important;
   }
-  /* Expand all hidden voice thumbnails so the printout is complete */
-  .group .grid-rows-\[0fr\] { grid-template-rows: 1fr !important; }
+  /* Force every voice <details> fully expanded so the printout is complete.
+     Closed <details> hide their body via content-visibility on ::details-content
+     (modern Chrome) or display (Safari/Firefox), so reset both. */
+  .voice-post::details-content { content-visibility: visible !important; }
+  .voice-post > .voice-post-body {
+    display: block !important;
+    max-height: none !important;
+    opacity: 1 !important;
+    padding-top: 1rem !important;
+    overflow: visible !important;
+  }
   img { max-width: 100% !important; page-break-inside: avoid; }
 }

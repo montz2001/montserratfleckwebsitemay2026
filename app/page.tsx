@@ -90,7 +90,7 @@ const SocialIcons = ({ handle, includeYouTube }: { handle: string; includeYouTub
           target="_blank"
           rel="noopener noreferrer"
           aria-label={l.label}
-          className="text-[var(--foreground)]/50 hover:text-[var(--accent)] transition-colors"
+          className="text-[var(--foreground)]/80 hover:text-[var(--accent)] transition-colors"
         >
           {l.icon}
         </a>
@@ -410,7 +410,7 @@ const voice: {
     posts: [
       {
         caption: "\"You can only win Best New Artist once and we couldn't be more proud! #GRAMMYs\"",
-        sub: "Live · Olivia Best New Artist win · paid partnership w/ Allstate",
+        sub: "Live · Olivia Dean Best New Artist win · paid partnership w/ Allstate",
         url: "https://www.instagram.com/p/DUPSn28DNBN/",
         thumb: "/voice/cbs-best-new-artist.jpg",
       },
@@ -536,16 +536,16 @@ const work: {
     blurb: (
       <>
         <p>
-          I came in to publish Polish and German for Paramount's globalization
+          I came in to publish Polish and German for Paramount&apos;s globalization
           team, and quickly took on more. By the holidays I was covering
           almost every globalized market, English publishing across every
           Nickelodeon handle, and the Fire Country / Sheriff Country accounts.
         </p>
         <p className="mt-4">
           Picking up that much in a short window got me noticed by a senior
-          IP marketing manager. I've partnered with her on the major CBS
+          IP marketing manager. I&apos;ve partnered with her on the major CBS
           tentpoles since: Grammys live-event work first (copywriting and
-          paid-promo dark posts across three teams I hadn't worked with
+          paid-promo dark posts across three teams I hadn&apos;t worked with
           before), then{" "}
           <a
             href="https://www.instagram.com/marshalscbs/"
@@ -557,7 +557,7 @@ const work: {
           </a>{" "}
           premiere strategy in January, the CBS fall schedule rollout, and
           live coverage of the 2026 Tony Awards (137+ posts in 24 hours,
-          20M+ views, written and published from the room). That's one
+          20M+ views, written and published from the room). That&apos;s one
           side of my week.
         </p>
         <p className="mt-4">
@@ -578,14 +578,14 @@ const work: {
           progress).
         </p>
         <p className="mt-4">
-          Threads I run on my own. That's the strategy, the per-brand voice,
+          Threads I run on my own. That&apos;s the strategy, the per-brand voice,
           the copy, and the community across <ThreadsLink handle="garfield" />,{" "}
           <ThreadsLink handle="spongebob" />, <ThreadsLink handle="tmnt" />,{" "}
           <ThreadsLink handle="startrek" />, and{" "}
           <ThreadsLink handle="avatarlegends" />.
         </p>
         <p className="mt-4">
-          Between the two teams, I work on most of Paramount's major IP.
+          Between the two teams, I work on most of Paramount&apos;s major IP.
         </p>
       </>
     ),
@@ -667,7 +667,7 @@ const work: {
         <p className="mt-4">
           Started as <strong>Global Engagement Coordinator</strong>, owning
           a weekly cross-channel social cadence across LinkedIn, Instagram,
-          TikTok, Facebook and Twitter as the point person for CMA's digital
+          TikTok, Facebook and Twitter as the point person for CMA&apos;s digital
           channels: content, community, and live-event coverage.
         </p>
         <p className="mt-4">
@@ -879,7 +879,7 @@ export default function Home() {
           <span className="gradient-text">live in the comments.</span>{" "}
           Not in a healthy way.
         </h2>
-        <p className="mt-7 max-w-xl text-base sm:text-lg text-[var(--foreground)]/75 leading-relaxed">
+        <p className="mt-7 max-w-xl text-base sm:text-lg text-[var(--foreground)]/80 leading-relaxed">
           I&apos;m a social strategist and writer at{" "}
           <strong>Paramount</strong>, deciding how Nickelodeon, CBS, SpongeBob,
           Star Trek, Garfield, TMNT, and Avatar sound online. I built the
@@ -949,7 +949,7 @@ export default function Home() {
         <div className="mb-10 max-w-2xl">
           <span className="eyebrow">By the numbers</span>
           <h2 className="font-serif text-4xl sm:text-5xl">The receipts.</h2>
-          <p className="mt-3 text-sm text-[var(--foreground)]/60">
+          <p className="mt-3 text-sm text-[var(--foreground)]/80">
             All pulled from real campaigns. Sources: client analytics,
             in-platform insights, Meta Ads Manager.
           </p>
@@ -965,7 +965,7 @@ export default function Home() {
               </div>
               <p className="mt-3 text-sm text-[var(--foreground)]/80 leading-snug">{s.label}</p>
               {s.context && (
-                <p className="mt-3 pt-3 border-t border-[var(--rule)] text-xs italic text-[var(--foreground)]/55 leading-relaxed">
+                <p className="mt-3 pt-3 border-t border-[var(--rule)] text-xs italic text-[var(--foreground)]/80 leading-relaxed">
                   {s.context}
                 </p>
               )}
@@ -975,10 +975,10 @@ export default function Home() {
       </section>
 
       {/* MARSHALS CASE STUDY */}
-      <section className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
+      <section id="work-marshals" className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
         <div className="border-t-2 border-b-2 border-[var(--foreground)] py-10 sm:py-14">
           <div className="mb-4">
-            <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent)]">
+            <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent-ink)]">
               Featured campaign
             </span>
           </div>
@@ -999,7 +999,7 @@ export default function Home() {
                 <h3 className="font-serif text-xl text-[var(--accent)] mb-2">
                   {w.title}
                 </h3>
-                <p className="text-sm text-[var(--foreground)]/75 leading-relaxed">
+                <p className="text-sm text-[var(--foreground)]/80 leading-relaxed">
                   {w.body}
                 </p>
               </div>
@@ -1008,7 +1008,7 @@ export default function Home() {
 
           {/* Where it ran */}
           <div className="mt-12">
-            <h3 className="text-xs uppercase tracking-[0.25em] text-[var(--foreground)]/60 mb-5">
+            <h3 className="text-xs uppercase tracking-[0.25em] text-[var(--foreground)]/80 mb-5">
               Where it ran
             </h3>
             <ul className="flex flex-wrap gap-2">
@@ -1021,7 +1021,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <p className="text-xs text-[var(--foreground)]/50 mt-4 italic">
+            <p className="text-xs text-[var(--foreground)]/80 mt-4 italic">
               Aggregate figures above. Per-account specifics aren&apos;t mine to share.
             </p>
           </div>
@@ -1036,10 +1036,10 @@ export default function Home() {
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl mt-2">Threads, my way.</h2>
         </div>
-        <p className="text-[var(--foreground)]/70 mb-5 max-w-3xl text-lg">
+        <p className="text-[var(--foreground)]/80 mb-5 max-w-3xl text-lg">
           {threads.intro}
         </p>
-        <p className="text-[var(--foreground)]/70 mb-10 max-w-3xl text-lg">
+        <p className="text-[var(--foreground)]/80 mb-10 max-w-3xl text-lg">
           The format is built for legacy IP: short text, in-character voice,
           decades of iconic quotes to draw from. Replying to my own comments
           in character lifts engagement another ~42%.
@@ -1074,7 +1074,7 @@ export default function Home() {
                     <div className="font-serif text-2xl gradient-text leading-none">
                       {s.v}
                     </div>
-                    <p className="text-[10px] uppercase tracking-[0.04em] text-[var(--foreground)]/60 mt-2 leading-snug">
+                    <p className="text-[10px] uppercase tracking-[0.04em] text-[var(--foreground)]/80 mt-2 leading-snug">
                       {s.l}
                     </p>
                   </div>
@@ -1116,7 +1116,7 @@ export default function Home() {
         <div className="mb-10 max-w-2xl">
           <span className="eyebrow">Paid + Promo</span>
           <h2 className="font-serif text-4xl sm:text-5xl">Both sides of paid.</h2>
-          <p className="mt-3 text-[var(--foreground)]/70">
+          <p className="mt-3 text-[var(--foreground)]/80">
             I&apos;ve worked the partner side and the performance side. Live,
             brief-driven paid placements at Paramount on one end; ad
             performance, DTC, and shop support at the Laurie Berkner Band on
@@ -1198,7 +1198,7 @@ export default function Home() {
           </article>
         </div>
 
-        <p className="mt-6 text-xs text-[var(--foreground)]/55 italic">
+        <p className="mt-6 text-xs text-[var(--foreground)]/80 italic">
           Paid toolbelt: Meta Ads Manager · Meta Business Suite · ManyChat ·
           Shopify · Sprinklr · Hootsuite
         </p>
@@ -1211,7 +1211,7 @@ export default function Home() {
           <h2 className="font-serif text-4xl sm:text-5xl">
             Ten brands, many voices, one writer.
           </h2>
-          <p className="mt-4 text-[var(--foreground)]/70">
+          <p className="mt-4 text-[var(--foreground)]/80">
             This is my <strong>current roster</strong>{" "}at Paramount: what I&apos;m
             writing, posting and replying to right now. It&apos;s where most of
             the receipts above come from, and why the work below goes deeper
@@ -1250,13 +1250,13 @@ export default function Home() {
                   )}
                   <div className="min-w-0">
                     <h3 className="font-serif text-2xl leading-tight">{b.brand}</h3>
-                    <p className="text-xs uppercase tracking-wider text-[var(--accent)]">
+                    <p className="text-xs uppercase tracking-wider text-[var(--accent-ink)]">
                       @{b.handle}
                     </p>
                     <SocialIcons handle={b.handle} includeYouTube={b.handle === "startrek"} />
                   </div>
                 </div>
-                <p className="mt-3 text-sm text-[var(--foreground)]/70 leading-relaxed">
+                <p className="mt-3 text-sm text-[var(--foreground)]/80 leading-relaxed">
                   {b.note}
                 </p>
               </div>
@@ -1286,7 +1286,7 @@ export default function Home() {
                         </span>
                       </span>
                       {p.sub && (
-                        <span className="block text-xs text-[var(--foreground)]/55 mt-1">
+                        <span className="block text-xs text-[var(--foreground)]/80 mt-1">
                           {p.sub}
                         </span>
                       )}
@@ -1330,7 +1330,7 @@ export default function Home() {
                               className="block w-full max-w-sm h-auto rounded-md border border-[var(--rule)]"
                             />
                           )}
-                          <span className="block text-xs text-[var(--foreground)]/55 underline decoration-[var(--accent)]/40 underline-offset-4">
+                          <span className="block text-xs text-[var(--foreground)]/80 underline decoration-[var(--accent)]/40 underline-offset-4">
                             Open the post ↗
                           </span>
                         </a>
@@ -1350,7 +1350,7 @@ export default function Home() {
       <section id="work" className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
         <span className="eyebrow">Experience</span>
         <h2 className="font-serif text-4xl sm:text-5xl mb-2">Selected work.</h2>
-        <p className="text-[var(--foreground)]/60 mb-10">
+        <p className="text-[var(--foreground)]/80 mb-10">
           Five years of building audiences, running launches, and shipping content
           across kids, comedy, primetime &amp; streaming.
         </p>
@@ -1362,10 +1362,10 @@ export default function Home() {
             >
               <div>
                 <h3 className="font-serif text-2xl">{w.org}</h3>
-                <p className="text-xs uppercase tracking-wider text-[var(--accent)] mt-1">
+                <p className="text-xs uppercase tracking-wider text-[var(--accent-ink)] mt-1">
                   {w.role}
                 </p>
-                <p className="text-xs uppercase tracking-wider text-[var(--foreground)]/50 mt-1">
+                <p className="text-xs uppercase tracking-wider text-[var(--foreground)]/80 mt-1">
                   {w.dates}
                 </p>
               </div>
@@ -1373,7 +1373,7 @@ export default function Home() {
                 <div className="text-[var(--foreground)]/80 leading-relaxed [&>p:first-child]:mt-0">
                   {w.blurb}
                 </div>
-                <ul className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-xs uppercase tracking-wider text-[var(--foreground)]/55">
+                <ul className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-xs uppercase tracking-wider text-[var(--foreground)]/80">
                   {w.tags.map((t, i) => (
                     <li key={t} className="flex items-center gap-3">
                       {i > 0 && <span className="text-[var(--foreground)]/30">·</span>}
@@ -1419,7 +1419,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           <div className="border border-[var(--rule)] bg-[var(--background)] p-6">
-            <h3 className="text-xs uppercase tracking-wider text-[var(--accent)] mb-3">
+            <h3 className="text-xs uppercase tracking-wider text-[var(--accent-ink)] mb-3">
               Toolbelt
             </h3>
             <p className="text-sm leading-relaxed">
@@ -1429,7 +1429,7 @@ export default function Home() {
             </p>
           </div>
           <div className="border border-[var(--rule)] bg-[var(--background)] p-6">
-            <h3 className="text-xs uppercase tracking-wider text-[var(--accent)] mb-3">
+            <h3 className="text-xs uppercase tracking-wider text-[var(--accent-ink)] mb-3">
               Brand safety
             </h3>
             <p className="text-sm leading-relaxed">
@@ -1439,7 +1439,7 @@ export default function Home() {
             </p>
           </div>
           <div className="border border-[var(--rule)] bg-[var(--background)] p-6">
-            <h3 className="text-xs uppercase tracking-wider text-[var(--accent)] mb-3">
+            <h3 className="text-xs uppercase tracking-wider text-[var(--accent-ink)] mb-3">
               Passions
             </h3>
             <p className="text-sm leading-relaxed">
@@ -1468,7 +1468,7 @@ export default function Home() {
       {/* MODERATION & BRAND SAFETY */}
       <section className="mx-auto max-w-5xl px-6 pb-8 sm:pb-12">
         <div className="rounded-3xl border border-[var(--rule)] bg-[var(--background)] p-7 sm:p-9">
-          <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent)]">
+          <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent-ink)]">
             Moderation &amp; brand safety
           </span>
           <p className="mt-5 text-[var(--foreground)]/85 leading-relaxed">
@@ -1502,7 +1502,7 @@ export default function Home() {
         id="contact"
         className="mx-auto max-w-5xl px-6 py-16 sm:py-24 border-t border-[var(--foreground)]"
       >
-        <p className="uppercase tracking-[0.25em] text-xs text-[var(--accent)] mb-4">
+        <p className="uppercase tracking-[0.25em] text-xs text-[var(--accent-ink)] mb-4">
           Available
         </p>
         <h2 className="font-serif text-5xl sm:text-7xl mb-6 leading-[1.05] max-w-3xl">
@@ -1510,19 +1510,19 @@ export default function Home() {
         </h2>
         <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 mb-10 max-w-2xl text-base">
           <div>
-            <dt className="text-xs uppercase tracking-[0.2em] text-[var(--foreground)]/55 mb-1">Currently</dt>
+            <dt className="text-xs uppercase tracking-[0.2em] text-[var(--foreground)]/80 mb-1">Currently</dt>
             <dd>Social Coordinator, Paramount TV Marketing</dd>
           </div>
           <div>
-            <dt className="text-xs uppercase tracking-[0.2em] text-[var(--foreground)]/55 mb-1">Looking for</dt>
+            <dt className="text-xs uppercase tracking-[0.2em] text-[var(--foreground)]/80 mb-1">Looking for</dt>
             <dd><strong>Social Media Manager</strong>, <strong>Social Strategy Manager</strong>, or <strong>Brand Marketing Manager (Social)</strong>. Brand-side preferred, agency open.</dd>
           </div>
           <div>
-            <dt className="text-xs uppercase tracking-[0.2em] text-[var(--foreground)]/55 mb-1">Based in</dt>
+            <dt className="text-xs uppercase tracking-[0.2em] text-[var(--foreground)]/80 mb-1">Based in</dt>
             <dd>New York, NY · open to hybrid or remote</dd>
           </div>
           <div>
-            <dt className="text-xs uppercase tracking-[0.2em] text-[var(--foreground)]/55 mb-1">Notice</dt>
+            <dt className="text-xs uppercase tracking-[0.2em] text-[var(--foreground)]/80 mb-1">Notice</dt>
             <dd>2–4 weeks</dd>
           </div>
         </dl>
@@ -1558,7 +1558,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="mx-auto max-w-5xl w-full px-6 py-10 text-sm text-[var(--foreground)]/60 border-t border-[var(--rule)] flex flex-wrap items-center justify-between gap-3">
+      <footer className="mx-auto max-w-5xl w-full px-6 py-10 text-sm text-[var(--foreground)]/80 border-t border-[var(--rule)] flex flex-wrap items-center justify-between gap-3">
         <span>© 2026 Montserrat Fleck · New York, NY</span>
         <a href="#main" className="hover:text-[var(--accent)] transition-colors no-print">
           Back to top ↑

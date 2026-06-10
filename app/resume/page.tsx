@@ -23,7 +23,7 @@ const breadcrumbJsonLd = {
       "@type": "ListItem",
       position: 2,
       name: "Resume",
-      item: `${SITE_URL}/resume`,
+      item: `${SITE_URL}/resume/`,
     },
   ],
 };
@@ -32,10 +32,10 @@ export const metadata: Metadata = {
   title: "Resume · Social Media Manager, NYC",
   description:
     "Resume of Montserrat Fleck, Social Media Manager (NYC). Paramount TV Marketing franchises team: 200M+ views on the Marshals premiere rollout, +218K @garfield followers in 90 days, 6+ paid partnerships at the 68th GRAMMYs (Allstate, IBM watsonx, Ulta).",
-  alternates: { canonical: "/resume" },
+  alternates: { canonical: "/resume/" },
   openGraph: {
     type: "profile",
-    url: "/resume",
+    url: "/resume/",
     title: "Montserrat Fleck · Resume (Social Media Manager, NYC)",
     description:
       "Paramount TV Marketing franchises team: Threads playbook for @garfield, @spongebob, @tmnt, @startrek; Marshals premiere social rollout; 68th GRAMMYs paid partnerships.",
@@ -53,7 +53,6 @@ export default function ResumePage() {
     <>
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <ResumeActions />
@@ -117,7 +116,7 @@ export default function ResumePage() {
                 management, and growth strategy for Nickelodeon, Nickelodeon
                 Family, CBS, SpongeBob, Star Trek, Garfield, TMNT, Avatar, and
                 PAW Patrol. Co-leading the PAW Patrol Dino release with
-                Spinmaster.
+                Spin Master.
               </li>
               <li>
                 Manage moderation and brand safety across the kid-facing
@@ -156,7 +155,7 @@ export default function ResumePage() {
               <li>
                 Increased ad performance 25 to 30 percent through Meta Ads
                 Manager, ManyChat flows, and audience-driven campaign testing.
-                Handled hand moderation and community management across all
+                Handled moderation and community management across all
                 platforms under COPPA.
               </li>
             </ul>
