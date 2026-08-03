@@ -117,6 +117,11 @@ const stats: { value: string; label: ReactNode; context?: string }[] = [
     context: "Well above the typical owned-social pull for a network midseason drama.",
   },
   {
+    value: "24.7M",
+    label: "Views across Instagram & Facebook in my first month running @thebradybunch solo",
+    context: "Strategy, copy, image and carousel design, publishing, and video direction — all mine.",
+  },
+  {
     value: "4M+",
     label: "Engagements across owned social during the Marshals campaign window",
     context: "Above the typical engagement range for a launch this size.",
@@ -135,11 +140,6 @@ const stats: { value: string; label: ReactNode; context?: string }[] = [
     value: "7×",
     label: "Higher engagement on IG Collab posts vs. non-collab content I executed",
     context: "The right talent and cross-account setup pushed it well past the typical Collab lift.",
-  },
-  {
-    value: "2×",
-    label: "Follower growth across FB, IG & TikTok for the Laurie Berkner Band",
-    context: "Most legacy artist accounts grow 5–15% a year. I doubled the total in three quarters.",
   },
 ];
 
@@ -212,6 +212,33 @@ const marshals = {
       body:
         "Coordinated red-carpet press across Entertainment Tonight, MTV, CMT, CBS Mornings, and Allegedly Speaking. ET led the averages at ~12K per post, with one TikTok peaking at ~34K. Aggregated across every placement, the press wave cleared 500K+ views.",
     },
+  ],
+};
+
+const bradyBunch = {
+  headline: "24.7M views. 18.6M reach. 593K+ engagements.",
+  blurb:
+    "Paramount handed me @thebradybunch to turn the show's organic resurgence into an owned social presence, and this one is entirely mine. I run the strategy, write every caption and text post, design every image and carousel myself, own publishing and the cross-platform calendar, and direct the video edits shot-by-shot from notes and a shot list. The one thing I don't touch personally is the video cut itself. In my first month on the account (July 2026), Instagram and Facebook combined for the numbers above across 20 pieces of content.",
+  wins: [
+    {
+      title: "One reel hit 4.44M views combined",
+      body:
+        "“Mike has some fatherly advice: the best personality is your own” pulled 2.03M views on Instagram and 2.4M on Facebook — 4.44M combined off a single clip I wrote the caption for and directed the edit on.",
+    },
+    {
+      title: "Reads the news, not just the rerun",
+      body:
+        "Caught a guest star from the \"oh my nose\" episode who went on to play a different Spider-Man, and timed the reveal to Spider-Man: Brand New Day's premiere weekend — 3.27M views on Facebook and 992K on Instagram, 4.26M combined, off 50-year-old footage. Same instinct on the Fourth of July: paired a Brady fireworks clip with the holiday and the guest actress's original run on Little House on the Prairie to ride its Netflix revival — 3.46M combined views of its own.",
+    },
+    {
+      title: "11 reels directed, 9 posts designed solo",
+      body:
+        "Of 20 Instagram posts, 11 were reels I storyboarded and directed — the designer executed the cut from my notes. The other 9 (carousels and images) I designed myself, start to finish.",
+    },
+  ],
+  amplification: [
+    { account: "Instagram", posts: "20", views: "11.2M", eng: "456K+" },
+    { account: "Facebook", posts: "19", views: "13.53M", eng: "137K+" },
   ],
 };
 
@@ -574,8 +601,15 @@ const work: {
           >
             @thebradybunch
           </a>{" "}
-          (just took it over: short-form strategy and voice rollout in
-          progress).
+          (mine solo: strategy, copy, image and carousel design, publishing,
+          and video direction — 24.7M views in my first month, more{" "}
+          <a
+            href="#work-brady"
+            className="underline decoration-[var(--accent)]/40 underline-offset-4 hover:decoration-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+          >
+            below
+          </a>
+          ).
         </p>
         <p className="mt-4">
           Threads I run on my own. That&apos;s the strategy, the per-brand voice,
@@ -971,6 +1005,60 @@ export default function Home() {
               )}
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* BRADY BUNCH CASE STUDY */}
+      <section id="work-brady" className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
+        <div className="border-t-2 border-b-2 border-[var(--foreground)] py-10 sm:py-14">
+          <div className="mb-4">
+            <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent-ink)]">
+              Solo campaign — strategy through publishing, mine start to finish
+            </span>
+          </div>
+          <h2 className="font-serif text-4xl sm:text-6xl leading-[1.05] mb-6">
+            {bradyBunch.headline}
+          </h2>
+          <p className="text-[var(--foreground)]/80 text-lg max-w-3xl leading-relaxed">
+            {bradyBunch.blurb}
+          </p>
+
+          {/* Wins */}
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-[var(--rule)]">
+            {bradyBunch.wins.map((w, i) => (
+              <div
+                key={w.title}
+                className={`py-6 md:py-8 md:px-6 ${i > 0 ? "md:border-l border-[var(--rule)] border-t md:border-t-0" : ""}`}
+              >
+                <h3 className="font-serif text-xl text-[var(--accent)] mb-2">
+                  {w.title}
+                </h3>
+                <p className="text-sm text-[var(--foreground)]/80 leading-relaxed">
+                  {w.body}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Where it ran */}
+          <div className="mt-12">
+            <h3 className="text-xs uppercase tracking-[0.25em] text-[var(--foreground)]/80 mb-5">
+              Where it ran
+            </h3>
+            <ul className="flex flex-wrap gap-3">
+              {bradyBunch.amplification.map((row) => (
+                <li
+                  key={row.account}
+                  className="text-sm px-3 py-1.5 rounded-full bg-[var(--foreground)]/5 border border-black/5 font-serif"
+                >
+                  {row.account}: {row.posts} posts · {row.views} views · {row.eng} engagements
+                </li>
+              ))}
+            </ul>
+            <p className="text-xs text-[var(--foreground)]/80 mt-4 italic">
+              First month on the account (July 2026).
+            </p>
+          </div>
         </div>
       </section>
 
