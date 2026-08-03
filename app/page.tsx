@@ -119,7 +119,7 @@ const stats: { value: string; label: ReactNode; context?: string }[] = [
   {
     value: "24.7M",
     label: "Views across Instagram & Facebook in my first month running @thebradybunch solo",
-    context: "Strategy, copy, image and carousel design, publishing, and video direction — all mine.",
+    context: "Strategy, copy, image and carousel design, publishing, and video direction: all mine.",
   },
   {
     value: "4M+",
@@ -223,17 +223,17 @@ const bradyBunch = {
     {
       title: "One reel hit 4.44M views combined",
       body:
-        "“Mike has some fatherly advice: the best personality is your own” pulled 2.03M views on Instagram and 2.4M on Facebook — 4.44M combined off a single clip I wrote the caption for and directed the edit on.",
+        "“Mike has some fatherly advice: the best personality is your own” pulled 2.03M views on Instagram and 2.4M on Facebook, 4.44M combined off a single clip I wrote the caption for and directed the edit on.",
     },
     {
       title: "Reads the news, not just the rerun",
       body:
-        "Caught a guest star from the \"oh my nose\" episode who went on to play a different Spider-Man, and timed the reveal to Spider-Man: Brand New Day's premiere weekend — 3.27M views on Facebook and 992K on Instagram, 4.26M combined, off 50-year-old footage. Same instinct on the Fourth of July: paired a Brady fireworks clip with the holiday and the guest actress's original run on Little House on the Prairie to ride its Netflix revival — 3.46M combined views of its own.",
+        "Caught a guest star from the \"oh my nose\" episode who went on to play a different Spider-Man, and timed the reveal to Spider-Man: Brand New Day's premiere weekend for 3.27M views on Facebook and 992K on Instagram, 4.26M combined, off 50-year-old footage. Same instinct on the Fourth of July: paired a Brady fireworks clip with the holiday and the guest actress's original run on Little House on the Prairie to ride its Netflix revival, pulling 3.46M combined views of its own.",
     },
     {
       title: "11 reels directed, 9 posts designed solo",
       body:
-        "Of 20 Instagram posts, 11 were reels I storyboarded and directed — the designer executed the cut from my notes. The other 9 (carousels and images) I designed myself, start to finish.",
+        "Of 20 Instagram posts, 11 were reels I storyboarded and directed; the designer executed the cut from my notes. The other 9 (carousels and images) I designed myself, start to finish.",
     },
   ],
   amplification: [
@@ -602,7 +602,7 @@ const work: {
             @thebradybunch
           </a>{" "}
           (mine solo: strategy, copy, image and carousel design, publishing,
-          and video direction — 24.7M views in my first month, more{" "}
+          and video direction; 24.7M views in my first month, more{" "}
           <a
             href="#work-brady"
             className="underline decoration-[var(--accent)]/40 underline-offset-4 hover:decoration-[var(--accent)] hover:text-[var(--accent)] transition-colors"
@@ -1013,7 +1013,7 @@ export default function Home() {
         <div className="border-t-2 border-b-2 border-[var(--foreground)] py-10 sm:py-14">
           <div className="mb-4">
             <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent-ink)]">
-              Solo campaign — strategy through publishing, mine start to finish
+              Solo campaign: strategy through publishing, mine start to finish
             </span>
           </div>
           <h2 className="font-serif text-4xl sm:text-6xl leading-[1.05] mb-6">
