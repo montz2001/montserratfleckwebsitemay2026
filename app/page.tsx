@@ -218,7 +218,7 @@ const marshals = {
 const bradyBunch = {
   headline: "24.7M views. 18.6M reach. 593K+ engagements.",
   blurb:
-    "Paramount handed me @thebradybunch to turn the show's organic resurgence into an owned social presence, and this one is entirely mine. I run the strategy, write every caption and text post, design every image and carousel myself, own publishing and the cross-platform calendar, and direct the video edits shot-by-shot from notes and a shot list. The one thing I don't touch personally is the video cut itself. In my first month on the account (July 2026), Instagram and Facebook combined for the numbers above across 20 pieces of content.",
+    "Paramount handed me @thebradybunch to turn the show's organic resurgence into an owned social presence, and this one is entirely mine. I run the strategy, write every caption and text post, design every image and carousel myself, handle publishing and the cross-platform calendar, and direct the video edits shot-by-shot from notes and a shot list. The one thing I don't touch personally is the video cut itself. In my first month on the account (July 2026), Instagram and Facebook combined for the numbers above across 20 pieces of content.",
   wins: [
     {
       title: "One reel hit 4.44M views combined",
