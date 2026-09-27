@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VMAs Caption Generator</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="VMAs Captions">
+<meta name="theme-color" content="#0d0d10">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAATRklEQVR4nO2de5hUxZXAz6mqe2/3dM8ToeUxvBkGCDILuosxCgkkA4F8xnwxMRt1wcd+Gt01n4bErElMdrNJFk2iebphjSSG3TX59osuAeXhLuqHoICCriIDKAoqOMyzX/dRVWf/aELUcBVmum/P9NTv/5m5fefXp05VnTqF1dV1YDCcClbuBzAMXIwchlCMHIZQjByGUIwchlCMHIZQjByGUIwchlCMHIZQjByGUIwchlCMHIZQjByGUIwchlCMHIZQjByGUIwchlCMHIZQjByGUIwchlCMHIZQjByGUIwchlCMHIZQjByGUIwchlCMHIZQjByGUIwchlCMHIZQjByGUIwchlBEuR+g3CAgvuMbQkRAVK7HGVAMITkQERCQMQQkIiINgKSU5+YQkAAQQCslYrawLDJ+DAU5kDFkCATS95VUge9pUByEsGytVKw6Ma5lmi6IolVVTe3xV4/0vtXBhDDxo2LlQMYYQyWVl8lKFQBg/ahUora2af4cOx4bPnHMpPNafD9fVV8zesYUrZVWqsY6a9O9v/qvb9yNzKRiAJUnByIiZ1oqL5MNlB9PJCd/cM6E2TOaFsxpbGmuS42I2QkBlgalQCKgBu3KHAOstYb/4ee/+PUXbnfiCWEJM6wAAFZMN0HGGRD4rud5uapk9diWaecsnjdz0YWNLVNjLKFBBeBJHWipiAgBCymI1toSDkhad+eqB2//sVNVhYyR1uX+NAOCSpCDcQYA+d4MAKQmj79g2SdnLrqwcdbUGEsE4Hkqr6VGBERWEOIkRJozCxX++NIbdzy0sbZumNbapBonGdxynNSCiKYtmNt687KmC+bU1gw/4YTSDDEsgSAi1IjAfvrZv9/14KbaYWdJP4j28Qc6gzXnQIaILN+TBqDmhXNbb1o2a8l8AZYL2V6vkzFExjjnoT9PQFon7Poffe76nQ9urG0wZpyCQSkHF9zLuYHnTV94futNy1uWzuMgcjLj6RxjjItwJ/6I1rrGHrb+nlVP/+fDNfXDVCAjeOxBxyCTAxkiYrqra8TEsYtXXL3wuisQMC/TpIlxju8RKt6GUjJh1z58z733X/+PVTU1Wpn089QMppyDC+67fuC6F11z6WdW3lJXl8oG3UTETs+JAkrKGmfYjkc2fH/x1cnaOiAws9YwBk3k4LaV7ugYNmbUlT/74XmfaHUhl/G6mOD4/j/6J7TWMTv5+iv777/+W/GqJAASmbARyiCQozCUdHe0z1664PI7bxszdWqv18E4Z6eRW7wDIkZMB3LNF/+5/dDh6vp6JVVpHrlCGOhyMM4CL1BB8Kmv/93Ft98ouN3rdXDRl8dWStc4DQ98a+XO/95U3zBcBmZ68j4M4JyDgAkeuK6I25fdcWvr1ct7ZDsRsT5tfGit41biwK5nv/uhKy3bbLqeFgM3cnCL53szDeNG3rxu1djm5i73KBe8z1tiDJkvvd984dtaSozZpIwc788A3X5kgufT2fqxZ6945JdjmpvSXhe3BOAZZZ9/QkmVFHVrv/PzA08/G6tOmLnraTIQhxUuRD6dqW9MrdiwetSUCVmvt29JRgGtdNxKtO3YtXL+Mm4JAAATNU6PARc5GOcnzNh436gpE/tpBgAAEiJb/717/bzLODdmnD4DSw7Gme+6DY2pFRvvGzl5Ytbr6acZWum4Vb13+/bn1m+pqq3RZu56JgwgOZCh9AIrZt+88d9GTZ6U63/MAAAgBNywcrX0A+xryjJkGUhyIEoZXPbDW8dObu5/zIBC2LCr927fvmf9lqrqaq1M2DgzBoocwrJ6ujuX/MO1rcuWp92uYsQMKFSbb1i5WvoSmQkbZ8yAkIMJ3tvZOXvJgou/ckOv337G6+KnQisdE4kXn9y2Z/1jVTVJM33tA+WXAxkLPK+hceTld31NxG2NVKTkgBjyR+9eIz3vXceWDKdJ+d8aIgSu9zf3fHPM5Ka8l+nb6vi7ICLLco4eeaXt8Z2xqoQ2BcN9osxycCEy3T0XXXvpeR9f1OcdtT9HKx3DxFP/vq7z6JvCsUzNcN8opxzI0MvnR4xv/Mz3bnF19r1KPs8QxpkHuefXP2GJmNbGjD5SVjkQA89b/NWr6+pSUvp93jp5F6TJ5rEjL7Yd2vmiHY+ZQyh9pmxyMM7y6cz0Becv/NsrMkH3GZX6vTdaaxtjz61/IpftLcrEZ8hSvshBAEStK5YjYTFzAiImmKdzz63dIoRNZkzpB+WRg3GWz2SaPzx31sfm5WWmiGGDiAS3Oo8dPbb/Vct2TCraH8oUOQgAqHXFMg6iuCW+RGRD7PCz+3rePC5scx66X5RBjkK20Tx/7qyPzs8H6SKGDQAAAga87YldGlSxMtwhS5kiB4PWFcsEs4r+xWac59zMK089x033lX4TtRzI0M97qYnjmj54rqtyRVkPPQkRMcFdmT3a9qqwTDbaX6KXg/le/oKrLqmtPkvJAIoa+EmTBc7hZ/Zmu7u56evVbyKVAwG0VPFkcuaSCwPwir+NTiRApNu73GyWifJvGw12opWDMT+fHztrWuPUqb7Ml6L1FgFlO7oZmFrRIhDt14sxKf1zls5zrNKcD0AgoBc3bQMwJeZFIFI5tJSxquTMpRdJ8KA0pVkIyG2rFL95CBKdHIUxZcJ5H2hsbvJVScYURFRaBnnP1BIXhSjlQCmD8efOiIkqLXXR/3tEJCy7o/3Ng9t22/G4KfDpPxGn9Kxp3rkKdOnWLonInIMtFhHJgYjS8+tHphpbmiWVOOybIaVIRBU5EHSgEg01daNHKDLniwYHUUUOxnzpNV00JwYJJbX5cg8Koss5NCk7HhPMrGoPGqKSg4gzMXziGAUlP5NoxqxiEZEcRGRxe9IFLRpUSf95RFoF0lRyFIUIE1KlvKxb0rkEae3EqqpHNGgpTfzoPxHJoZV2qhOJumpNqkR6FA7p19enxp87PfBcI0f/iUIOZCzI+6mm8aNnTAm0W9wCn3dBoAPXN2sdRSG62QppTRDFkna8tjqCvzIUqKyKGAIEnPnxCwnIxI7+U1lyACCgDAICs85WBCpKDmTog9fY0lwzbJgyTcD6TUXJAYgSgobGs+O11VqaLfv+UlFyIKL2ZdKpGzd7uu/nkVfUp4ueSCvBsPR/jog4F5PPn2UOrfSfKOQgra24fazt0Osv7LdYrLQ1Wgga5MS5s2zbdOboLxFFDsaZl85mu9MMS3togDHmkTt6VlN9Y0p6JiftF5HtygLj3EnESn5kAFFJWR2vGzt7uh+4pv1of4iuTDBQ/sGtuxnwUtdzkCbOrNmfXECKzPZsf4hsVxaVlu0vH+FQ8j5MjDOPctMW/lX92SnpBcaPPhPdbIUh9/Ou1CXPAxAxkP5ZI8Y0XTTbc4t8kH9IEVWxj9a2cNoe3+VClgtW8rOKREjsLy5ZgGZ/th9EmJBaPNvZ2/36WxxLXkbKOM/rzJxLPjpy6iQvmzdzlr4RXZmgcOyuN48d3v2SQCeCGmOlZMKpbbn4w37gMrNU2icifmu67bGdHFgEDZkYMl+7C268vC41QvqBiR19IMpiHxLCOrTzBVfmmGCltgMZ+oE7cvSED131qVw2jcVtSzc0iLQSzI7HX9nxf4dfarN5PIK1beTM07mP3PC5+tQIM6ftA5EOK0wIN5d5/g+PC3Cg9BtjiOgF+ZGjJ37oqk/lc8XuaTkEiDbn0FoI+7k/POYF2WiSRMa4R7mP3PDX9amUCsxWy5kRqRyFkeW1PXsP79tni0hGFoa+nx85euIFV12SyfSwIt3nMkSIVo7CPeSZzPPrnrDAiabkAjnPq8yim5aPnjLZy2VL0VGoUon6TZHWthPf+svf96SPc2FF0NYNEaXyh6VGXXbXV6QvS/73Kojo5SA77hx7+dW2J3fGeFU0zZkY52m/6y8/vnjetZ/O9HRzcwnL6VGmGKthwx2rpY5ubYox5srsp79zy9mTJni5krSrqzzK8I600vHq5Etbtu/ZtCVuRXRRNCIG2q9rGPG5u29VWplZy+lQpi8QAgBuuGO1AhnZpa+c84zXNXfJ0ou/8YWe7k5hmZnL+1AeObTS8WTypf/dvmfjY3GRjOyWec5Fxu/6xJeuO/fij/V2dnHjx3tSvqEXARA33HEfYYTFfAgaNY9Zl9/1tYYxZ+fTWbNs+h6UTY5C5vHio9s2/+L+pFUXWfBgjLl+dsT4xi9t+GVtaljgeaZULIxyvhcishzn4e/e2919TAg7souVGOc5Lz1u+rQvPvyviKCUNEXqp6Sscmhy4vG3Dh3+7a3fj7GEiip4QOGadK974gfO+ez3v5zPZADA+PHnlDmiKimTdbWPr/rdjvWP1DjDlIxuBZMLkfW7F113zRU/uT3b00uKzOLHuyj/6yACK+b86rpvHjnQFneSUTa0Z5z3eh1Lbrj2yp98I5C+8n1TUPh2yv8uSGvLcToPv/mbL35b5n1GGGUXWy54r9/ZesPyr299IDG8zs3muGWuazlB+eUAAC1VTUPDM+sefehfflpjD9cyuuQDABhnGa978uyWW9bfW5NqSHd2CnOdDwAMEDkAQAZBbV3Duu+s2rD6vupYfZTJBwBwIdJe19gZU7+6ec2sJfO6OtqRM5OCYHV1Xbmf4QTIUPmSO+LrO347ZnJT1uvh0dbmaKVidkJp+fvbf7T+e6sY406iKmJNBxQD6MtBmoRjBa7/g49d88aBg1VOTcT/GMa5G+SkDj7/T7dd/x931Y0Zke7qZEM4hAygyFGAce5msvWNqRUb7xs1eVL08QMAVCCrYw0db77x29vu3Pqr3wvLdhJxJeVQu3FywMkBAFyIfDpT35hasWH1qCkTsl5vGfyQ0nZiNsS3/27tA7euPPryoWSylltCKR3ZSm7ZGYhyAAAT3E1n6xtTX95w38gp5YkfRERaJ+369jcOr1v5i21r1vYe76xKVHNb6KGhyACVAwC44PneTMO4kTevWzW2uTntdnHBoz+YpJWybDsGySP7923+6Zon1zzUe7yjKlHDbUFKV/bFQgNXDiBgggeuK+L2ZXfc2nr18h7ZTkTRb6ISkVbaceIOxI8c2Lf5x2ueXPNQb0dnLFZlxZwTXd0r0ZIBLAcAADDOAi9QQbDkq9defPuNgtt5Lx39EAMApKlQOm9D/PWX2zbd/evda7e0v3IYAZ1EFbcFEJGmSoolA10OAECGiNjT3Tl76YLL77xtzNSpvV4H47wsx9eISGsds+MCnHR3x9MPPPzM2kdffmpP7/EOhsKOO9yykGFliDII5CjAbSvd0TFszKgrf/bN8z7R6kJOej4r0yED0kSkuW3FIakgOHrw0Aubn9y99n9ee/al3mPHpQoYcLsqxhhHFulWUXEZNHIAABfcd/3AdS+65tLPrLylri6VDbqJqGylfkRaa0S0rJgDcR/cnuPtrz299+DOPQef2vPajr1eLqc1CUsMUj8GkxzwxyEm0909YuLYxSuuXnjdFQiYl2nS5VPkj+kIMiYsYUEMABQEXjbf+drRez5/yxt7D1hORGc/i8sgk6MAF9zLuYHnTV94futNy1uWzuMgcjJDWjPGytWHg4gKlbBxJ6lJvbBp2+af3L9/6zM6iHSTuYgMSjngRAhh+Z40ADUvnNt607JZS+YLsFzISk8yhlFuiJDWWpNwRAwSEoI967ds+OHqvZu3EUAsmRi8fR8GqxwFCoVb+d4MEU1bMLf15mVNF8yprRkegOepvFaaYQktIa01EePM4XELnJ7e9ratuzb8YPXeR7cjYrwmCQBaDeLm/INbjgInFQGA1OTxFyz75MxFFzbOmhpjiROWSI0IiAwR+9WXlICoMEkFJk444ers4T37nn/kia2rHzx24BAAVIAWBSpBjgKMMyDwXc/zclXJ6rEt085ZPG/mogsbW6bGWEKDCsCTOtBSERECIiIBIEJYaCGtiQALmyxAiMgEF8yywGHAXZ09vHvf84888dzDj722e28uk3acKjvmAFaCFgUqR44CiIicaan8XD5QfjyRHD975oTZM5oWzGlsaa5LjYjZCQGWBqVAIqACFahT3pNNFo9x4ATEQTDgEgLXz3Yfe+vw7pfaHt31yjMvHHrm+Xw2Y3HbroozwStvq6XS5DgJMsYYKqn8XF6qAADrR6UStbVN8+fY8djwiWMmndfi+/mq+prRM6Zo0m/PGomAIXv9hf25rl7bjh/csbv95SN+3m3bsivb09P1xjEAEtyyq+JccK2pUm/9qVg5ToKMIUMgkL6vpAp8T4PiIIRla6Vi1Ymzp4zTpN8ZPIghO7r/VTedZZzLwFcgGXDLdrjgwrYBT6xtlO1TRULly3GSQjaKjCFgIa8EQFLKdz0EfPt4gAAEZMcc5ByACpksAZHWhZy0bJ8hWoaQHKcGIaxBCJEeanWB72LIN6ggIKrw0aHPDNG6asPpYOQwhGLkMIRi5DCEYuQwhGLkMIRi5DCEYuQwhGLkMIRi5DCEYuQwhGLkMIRi5DCEYuQwhGLkMIRi5DCEYuQwhGLkMIRi5DCEYuQwhGLkMIRi5DCEYuQwhGLkMIRi5DCEYuQwhGLkMIRi5DCEYuQwhGLkMIRi5DCEYuQwhPL/0/trJ25viZEAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAADKklEQVR4nN2WTWhcVRTHzzn3vXkzeZnMM50kU5oGDDJWKVHbRRcJgiiky9oPobhJ66IUCn5Vu3DrxhI/wI2CQhDFrMTiIiiFil8gpYE2jSldtE2rbdOmTWbmfd/77nERqWM6SV4mzaLe5b3vnd89h3P//4P5vAPruWhdo/8vAEaajxARiRBBa2atHyQAEVGQimTsuwqkiZls3mbmBwMgQYlMgmrFKXVt3dlf3rFdgRo7/pmKJCKuFUBChK6XbbP3HHu9f2jXxs2Phto//sJQ5PpmNpu+UI0BJERQrXU/VT70xXDv1j4fapEKPt575Pyp3wqPbNAqSRm9MYAEhZ7X3Vd++4eRQrE458202e2/fnti/MRJp72YSJU+OjRoU8REJtm8fejr4UKx6IVVM2vFKjr50ZeGkdGrbKEGABIUeLXBN4Z6t/R5YYUEZUR2enJqevwPqyXHyRoBiCqSTlfnwCu7A+2SYbBmAzLTpyejIEDRzKv8zz9EFPl++dntHaVNMonu9eKdq9cBVtH7y2QAGnTPticEG1BXDBnGzUW/DwCAgM7GTkau24HWDYUm77+y2CFo0KUtvQJFc0VaDGDg+Ru3kP+pPhLFEPbu6Ct0FlUsIbVCLAFgIKCr41MJqoUTRJRx1FnqeXrXc6HvCkOsCaC1tlpaLv505vbNv0xhLagmIiod7Tx6sNVxVCyRVpfEogzYsMz5mVu/fP5Njlq1UgCARJEKNj/2+Evvv+W5lQVvaBYAoBOds/PffzBy6cI5O1tIlAIAEsKNK88ffHnfu2/W5udULIVppEzlvrswC1OENe/T/Ucrs7O21ZZIycwkyJfV3e+8evirD+32fPXundgPdQrlwIZjyyK5DsCVMmatWWs759y+du3UJ6MTYz9Xbs5Grt8MAOoMZ/C1oYEDL3Z0dwswGFhDkoGcAZnLlydGj7139rsfTSvDesk3siQA7lmmV3NKXeX+bT3PPOls6gCAuT9nrpyZvPT7Oe9uxbAysKxFLweAOtOPfF9DgkAAwKAJhJXLCdNYcQBYAfAvhgjqu4aBtU4zXqSai5iZk1X4cP16+EfHdQf8DQPrZa1SSy4AAAAAAElFTkSuQmCC">
+<style>
+  :root {
+    --bg: #0d0d10;
+    --bg-card: #17171c;
+    --bg-input: #1f1f26;
+    --border: #2b2b34;
+    --text: #f2f2f5;
+    --text-dim: #9a9aa5;
+    --accent: #9ffcd6;
+    --accent-dark: #0d0d10;
+    --danger: #ff6b6b;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-sizing: border-box;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f4f4f7;
+      --bg-card: #ffffff;
+      --bg-input: #f0f0f4;
+      --border: #dcdce2;
+      --text: #16161a;
+      --text-dim: #6b6b75;
+      --accent: #0f9d68;
+      --accent-dark: #ffffff;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f4f7;
+    --bg-card: #ffffff;
+    --bg-input: #f0f0f4;
+    --border: #dcdce2;
+    --text: #16161a;
+    --text-dim: #6b6b75;
+    --accent: #0f9d68;
+    --accent-dark: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  body {
+    padding: 20px 16px calc(96px + env(safe-area-inset-bottom, 0px));
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    gap: 10px;
+  }
+  h1 {
+    font-size: 20px;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  h1 span {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
+  }
+  .theme-toggle {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 13px;
+    cursor: pointer;
+    flex-shrink: 0;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .card h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    margin: 0 0 12px 0;
+  }
+  label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 4px;
+    margin-top: 10px;
+  }
+  label:first-of-type { margin-top: 0; }
+  input[type="text"], select {
+    width: 100%;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 15px;
+    font-family: inherit;
+  }
+  input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 480px) {
+    .grid2 { grid-template-columns: 1fr; }
+  }
+  .category-scroll {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .category-scroll::-webkit-scrollbar { display: none; }
+  .cat-btn {
+    flex-shrink: 0;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    min-height: 44px;
+  }
+  .cat-btn.active {
+    background: var(--accent);
+    color: var(--accent-dark);
+    border-color: var(--accent);
+    font-weight: 600;
+  }
+  .templates {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .tpl-btn {
+    text-align: left;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 10px;
+    padding: 14px 14px;
+    font-size: 14.5px;
+    cursor: pointer;
+    line-height: 1.45;
+    min-height: 44px;
+  }
+  .tpl-btn:hover, .tpl-btn.selected {
+    border-color: var(--accent);
+  }
+  .tpl-btn.selected {
+    background: color-mix(in srgb, var(--accent) 12%, var(--bg-input));
+  }
+  .output-box {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 16px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    min-height: 50px;
+    word-break: break-word;
+    cursor: pointer;
+  }
+  .output-box:active { border-color: var(--accent); }
+  .tap-copy-hint {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-align: center;
+    margin-top: 4px;
+    opacity: 0.8;
+  }
+  .output-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    margin: 14px 0 6px 0;
+    font-weight: 700;
+  }
+  .output-label:first-of-type { margin-top: 0; }
+  .onscreen-box {
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+  .hashtag { color: var(--accent); }
+  .placeholder-hint {
+    color: var(--danger);
+    font-weight: 600;
+  }
+  .actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  button.primary {
+    flex: 1;
+    background: var(--accent);
+    color: var(--accent-dark);
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    min-height: 48px;
+  }
+  button.secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 10px;
+    padding: 15px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    min-height: 48px;
+  }
+  button.mega {
+    width: 100%;
+    background: var(--accent);
+    color: var(--accent-dark);
+    border: none;
+    border-radius: 12px;
+    padding: 18px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    min-height: 52px;
+    margin-top: 4px;
+  }
+  .sticky-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+    box-shadow: 0 -6px 20px rgba(0,0,0,0.25);
+    display: none;
+  }
+  .sticky-bar.visible { display: block; }
+  .sticky-bar button.mega {
+    margin: 0;
+  }
+  .sticky-bar .copied-msg {
+    margin-top: 4px;
+    height: 14px;
+    font-size: 12px;
+  }
+  .copied-msg {
+    text-align: center;
+    font-size: 13px;
+    color: var(--accent);
+    margin-top: 8px;
+    height: 16px;
+  }
+  .footer-note {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 12px;
+    margin-top: 18px;
+    line-height: 1.5;
+  }
+  .name-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .name-tag {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--text-dim);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .name-tag:hover { border-color: var(--accent); color: var(--text); }
+  .hint-text {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  .hint-text a { color: var(--accent); }
+  .label-note {
+    text-transform: none;
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--text-dim);
+    opacity: 0.85;
+  }
+  .lookup-results {
+    margin-top: 10px;
+    max-height: 260px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .lookup-row {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 13.5px;
+  }
+  .lookup-artist {
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--text);
+    padding: 6px 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .lookup-artist:hover { color: var(--accent); }
+  .lookup-titles {
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .lookup-title-chip {
+    background: transparent;
+    border: 1px dashed var(--border);
+    border-radius: 999px;
+    padding: 7px 12px;
+    font-size: 12.5px;
+    color: var(--text-dim);
+    cursor: pointer;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .lookup-title-chip:hover { border-color: var(--accent); color: var(--text); }
+  .lookup-empty {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    padding: 8px 0;
+  }
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-top: 14px;
+    cursor: pointer;
+    padding: 8px 0;
+    min-height: 44px;
+  }
+  .checkbox-row input { width: 22px; height: 22px; margin: 0; flex-shrink: 0; }
+  .autocomplete-wrap {
+    position: relative;
+  }
+  .suggest-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-top: 4px;
+    max-height: 190px;
+    overflow-y: auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  }
+  .suggest-box.open { display: block; }
+  .suggest-item {
+    padding: 13px 14px;
+    font-size: 14.5px;
+    cursor: pointer;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .suggest-item:last-child { border-bottom: none; }
+  .suggest-item:hover, .suggest-item.active { background: var(--accent); color: #fff; }
+  .reminders-card h2 { margin-bottom: 10px; }
+  .reminder-list {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+  .reminder-list strong { color: var(--text); }
+  .reminder-list a { color: var(--accent); }
+  .auto-tag-note {
+    font-size: 11.5px;
+    color: var(--text-dim);
+    margin-top: 6px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><span>Paramount Social</span>VMAs Caption Generator</h1>
+    <button class="theme-toggle" id="themeToggle">🌓</button>
+  </header>
+
+  <div class="card">
+    <h2>1. Fill in your details</h2>
+    <div class="grid2">
+      <div class="autocomplete-wrap">
+        <label for="name1">Name 1 <span class="label-note">(paste exact spelling from vote.mtv.com)</span></label>
+        <input type="text" id="name1" autocomplete="off" placeholder="e.g. RAYE, Charli xcx, GENER8ION" oninput="render(); showSuggestions('name1')" onfocus="showSuggestions('name1')" onblur="hideSuggestionsSoon('name1')">
+        <div class="suggest-box" id="suggest-name1"></div>
+      </div>
+      <div>
+        <label for="handle1">@ handle (optional)</label>
+        <input type="text" id="handle1" placeholder="e.g. raye" oninput="render()">
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="autocomplete-wrap">
+        <label for="name2">Name 2 (optional) <span class="label-note">(exact spelling)</span></label>
+        <input type="text" id="name2" autocomplete="off" placeholder="e.g. LISA, PinkPantheress" oninput="render(); showSuggestions('name2')" onfocus="showSuggestions('name2')" onblur="hideSuggestionsSoon('name2')">
+        <div class="suggest-box" id="suggest-name2"></div>
+      </div>
+      <div>
+        <label for="handle2">@ handle (optional)</label>
+        <input type="text" id="handle2" placeholder="e.g. lalalalisa_m" oninput="render()">
+      </div>
+    </div>
+    <label for="extra">Extra detail (category, song title, event, year, action, etc.) <span class="label-note">(exact stylization, e.g. "hate that i made you love me" lowercase or "SUGAR ON MY TONGUE" caps)</span></label>
+    <input type="text" id="extra" placeholder="e.g. Video of the Year / hate that i made you love me / struck that pose" oninput="render()">
+
+    <label for="platform">Platform</label>
+    <select id="platform" onchange="render()">
+      <option value="feed">IG feed post — auto-add #VMAs</option>
+      <option value="stories">IG Stories — no auto hashtag, we'll tag manually</option>
+    </select>
+
+    <label class="checkbox-row"><input type="checkbox" id="collabTag" onchange="render()"> This is a collab post (MTV + VMAs + Paramount+)</label>
+    <div class="hint-text" id="collabHint" style="display:none;">Set up the IG collab invite to @MTV, @VMAs, and @ParamountPlus — this checkbox is just a reminder, it doesn't send the invite for you.</div>
+
+    <div class="name-tags" id="quickNames"></div>
+    <div class="hint-text">Tap a name below, or use the lookup table further down for confirmed spellings.</div>
+
+    <label style="margin-top:14px;">Award category <span class="label-note">(tap to drop into extra detail)</span></label>
+    <div class="name-tags" id="quickCategories"></div>
+
+    <button class="secondary" style="width:100%; margin-top:16px;" onclick="clearAllFields()">Clear all fields</button>
+  </div>
+
+  <div class="card">
+    <h2>Confirmed name &amp; title lookup <span class="label-note">(pulled from vote.mtv.com)</span></h2>
+    <input type="text" id="lookupSearch" placeholder="search an artist or song title..." oninput="renderLookup()">
+    <div id="lookupResults" class="lookup-results"></div>
+  </div>
+
+  <div class="card reminders-card">
+    <h2>Platform manager reminders</h2>
+    <ul class="reminder-list">
+      <li><strong>#VMA / #VMAs on every post</strong> — auto-added below for feed posts. Not required on Stories (we tag manually there).</li>
+      <li>It's the <strong>VMAs carpet</strong>, not "red carpet." It's turquoise/light blue this year.</li>
+      <li>On IG, check regularly for collab invites from other brand accounts.</li>
+    </ul>
+    <h2 style="margin-top:16px;">Your account (@CBStv IG+FB) — beyond the grid</h2>
+    <ul class="reminder-list">
+      <li><strong>Carpet:</strong> Getty Images photos, posted as a collab with @VMAs.</li>
+      <li><strong>Main show:</strong> short 9x16 acceptance-speech snippets (collab per the award, see below), Getty Images (collab w/ @VMAs), and backstage iPhone videos (collab w/ @VMAs).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>2. Pick a category</h2>
+    <div class="category-scroll" id="categoryScroll"></div>
+    <div class="templates" id="templateList"></div>
+  </div>
+
+  <div class="card">
+    <h2>3. Your caption + on-screen text</h2>
+
+    <div class="output-label">Caption (for the post)</div>
+    <div class="output-box" id="outputCaption" onclick="copyBox('outputCaption')">Pick a template above to get started.</div>
+    <div class="tap-copy-hint">tap the box to copy</div>
+    <div class="auto-tag-note" id="autoTagNote"></div>
+    <div class="actions">
+      <button class="primary" onclick="copyBox('outputCaption')">Copy caption</button>
+    </div>
+
+    <div class="output-label">On-screen text (for the graphic / overlay)</div>
+    <div class="output-box onscreen-box" id="outputOnscreen" onclick="copyBox('outputOnscreen')">—</div>
+    <div class="tap-copy-hint">tap the box to copy</div>
+    <div class="actions">
+      <button class="primary" onclick="copyBox('outputOnscreen')">Copy on-screen text</button>
+      <button class="secondary" onclick="render()">Refresh</button>
+    </div>
+
+    <div class="copied-msg" id="copiedMsg"></div>
+  </div>
+
+  <div class="footer-note">Each template pairs a full caption with matching on-screen text, so the post copy and the graphic overlay always read as one piece. Fill in names above, tap a template, edit anything highlighted in red, then copy each piece where it goes.</div>
+</div>
+
+<div class="sticky-bar visible" id="stickyBar">
+  <button class="mega" onclick="copyBothSequential()">Copy caption, then on-screen text (one tap each)</button>
+  <div class="copied-msg" id="copiedMsgSticky"></div>
+</div>
+
+<script>
+const quickNamePool = ["RAYE","LISA","GUNNA","Shaboozey","Madonna","Yung Lean","Sienna Spiro","GENER8ION","Jeff Probst","Ariana Grande","Charli xcx","Troye Sivan","Teyana Taylor","Ciara Miller","Alex Warren","Isabel May","David Corenswet","Belmont Cameli","Brandon Sklenar","Rachel Dratch","Ella Bright","Snoop Dogg","Bruno Mars","Kacey Musgraves","Nirvana","Taylor Swift","SOMBR","Teddy Swims"];
+
+// Award category names, pulled from the night-of rundown — tap to drop into "extra detail".
+const awardCategories = ["Best Pop","Best Collaboration","Artist of the Year","Best Dance","Best New Artist","Video of the Year","Song of the Year","Best Hip-Hop","Best R&B"];
+
+// Confirmed artist/title stylization + @handles, pulled from vote.mtv.com and
+// the night-of rundown's HANDLES tab. Each entry: the artist as shown, its
+// confirmed titles, and the @handle(s) to use when tagging them.
+const mtvLookup = [
+  { artist: "Bella Kay", titles: [], handle: "@itsbellakayyy" },
+  { artist: "CORTIS", titles: ["REDRED"], handle: "@cortis" },
+  { artist: "Sienna Spiro", titles: ["Great Expectation"], handle: "@siennaspiro" },
+  { artist: "Magnus Ferrell", titles: [], handle: "@magnus_ferrell" },
+  { artist: "Malcolm Todd", titles: [], handle: "@malcolmtodd" },
+  { artist: "Myles Smith", titles: [], handle: "@mylessmithuk" },
+  { artist: "Stella Lefty", titles: ["Boston"], handle: "@stellalefty" },
+  { artist: "Ariana Grande", titles: ["hate that i made you love me"], handle: "@arianagrande" },
+  { artist: "Bruno Mars", titles: ["I Just Might", "The Romantic", "Risk It All", "Dance With Me"], handle: "@brunomars" },
+  { artist: "GENER8ION", titles: ["STORM starring Yung Lean"], handle: "GENER8ION (@surkin & @romaingavras)" },
+  { artist: "Madonna", titles: ["Confessions II - The Film", "Confessions II", "Danceteria", "Bring Your Love"], handle: "@madonna" },
+  { artist: "Sabrina Carpenter", titles: ["Tears", "House Tour", "Man's Best Friend", "Bring Your Love"], handle: "@sabrinacarpenter" },
+  { artist: "Taylor Swift", titles: ["The Fate of Ophelia", "The Life of a Showgirl", "Opalite", "I Knew It, I Knew You", "MTV VMA Artist Director Honors"], handle: "@taylorswift" },
+  { artist: "Morgan Wallen", titles: ["Been By Now"], handle: "@morganwallen" },
+  { artist: "BTS", titles: ["Swim", "SWIM"], handle: "@bts.bighitofficial" },
+  { artist: "Ella Langley", titles: ["Choosin' Texas", "Dandelion"], handle: "@ellalangleymusic" },
+  { artist: "HUNTR/X", titles: ["Golden"], handle: "@ejae_k, @audreynuna & @rei.ami" },
+  { artist: "Olivia Dean", titles: ["Man I Need", "The Art Of Loving", "So Easy (To Fall In Love)"], handle: "@oliviadeano" },
+  { artist: "PinkPantheress", titles: ["Stateside + Zara Larsson"], handle: "@pinkpantheress" },
+  { artist: "RAYE", titles: ["WHERE IS MY HUSBAND!", "Click Clack Symphony.", "I Will Overcome."], handle: "@raye" },
+  { artist: "Clipse, Kendrick Lamar, Pusha T, Malice", titles: ["Chains & Whips"], handle: "@clipse, @kendricklamar, @kingpush, @malice" },
+  { artist: "French Montana x Max B", titles: ["Ever Since U Left Me"], handle: "@frenchmontana x @maxb140" },
+  { artist: "Shakira & Burna Boy", titles: ["Dai Dai"], handle: "@shakira & @burnaboygram" },
+  { artist: "Teyana Taylor & Lucky Daye", titles: ["Hard Part"], handle: "@teyanataylor & @iamluckydaye" },
+  { artist: "Charli xcx", titles: ["SS26", "Camera", "Music, Fashion, Film"], handle: "@charli_xcx" },
+  { artist: "LISA", titles: ["Dream feat. Kentaro Sakaguchi", "SaWaDiKa"], handle: "@lalalalisa_m" },
+  { artist: "Olivia Rodrigo", titles: ["drop dead", "the cure", "you seem pretty sad for a girl so in love", "stupid song"], handle: "@oliviarodrigo" },
+  { artist: "Tate McRae", titles: ["Nobody's Girl"], handle: "@tatemcrae" },
+  { artist: "Cardi B ft. Kehlani", titles: ["Safe"], handle: "@iamcardib ft. @kehlani" },
+  { artist: "Don Toliver", titles: ["E85"], handle: "@dontoliver" },
+  { artist: "Drake", titles: ["Janice STFU", "Iceman"], handle: "@champagnepapi" },
+  { artist: "Megan Thee Stallion", titles: ["LOVER GIRL"], handle: "@theestallion" },
+  { artist: "Travis Scott", titles: ["DUMBO"], handle: "@travisscott" },
+  { artist: "Tyler, The Creator", titles: ["SUGAR ON MY TONGUE"], handle: "@feliciathegoat" },
+  { artist: "Chris Brown", titles: ["It Depends/Obvious"], handle: "" },
+  { artist: "Dave & Tems", titles: ["Raindance"], handle: "" },
+  { artist: "Justin Bieber", titles: ["YUKON"], handle: "" },
+  { artist: "Kehlani", titles: ["Folded"], handle: "@kehlani" },
+  { artist: "Mariah the Scientist & Kali Uchis", titles: ["Is It a Crime"], handle: "" },
+  { artist: "Geese", titles: ["Taxes"], handle: "@geesebandnyc" },
+  { artist: "mgk & Fred Durst", titles: ["FIX UR FACE"], handle: "@machinegunkelly & @freddurst" },
+  { artist: "Noah Kahan", titles: ["The Great Divide"], handle: "@noahkahanmusic" },
+  { artist: "SOMBR", titles: ["Homewrecker", "My Body Isn't Ready", "Faith", "Father Figure"], handle: "@sombr" },
+  { artist: "Tame Impala", titles: ["Dracula"], handle: "@tameimpala" },
+  { artist: "Tame Impala & JENNIE", titles: ["Dracula"], handle: "@tameimpala & @jennierubyjane" },
+  { artist: "twenty one pilots", titles: ["Drag Path"], handle: "@twentyonepilots" },
+  { artist: "Anitta with Shakira", titles: ["Choka Choka"], handle: "@anitta with @shakira" },
+  { artist: "Bad Bunny", titles: ["NUEVAYoL"], handle: "@badbunnypr" },
+  { artist: "Fuerza Regida", titles: ["TU SANCHO"], handle: "@fuerzaregida" },
+  { artist: "KAROL G", titles: ["Papasito"], handle: "@karolg" },
+  { artist: "Rosalía ft. Yahritza Y Su Esencia", titles: ["La Perla"], handle: "@rosalia.vt ft. @yahritzaysuesencia" },
+  { artist: "Ryan Castro, Kapo & GANGSTA", titles: ["LA VILLA"], handle: "@ryancastrro, @yosoytukapo & @yogangstaofficial" },
+  { artist: "BLACKPINK", titles: ["JUMP"], handle: "@blackpinkofficial" },
+  { artist: "KATSEYE", titles: ["Pinky Up", "Hootie Frutti"], handle: "@katseyeworld" },
+  { artist: "LE SSERAFIM (feat. j-hope of BTS)", titles: ["SPAGHETTI"], handle: "@le_sserafim (ft. @uarmyhope of @bts.bighitofficial)" },
+  { artist: "Bebe Rexha & Faithless", titles: ["New Religion"], handle: "@beberexha & @faithlessofficial" },
+  { artist: "Harry Styles", titles: ["Aperture", "Kiss All the Time. Disco, Occasionally.", "Dance No More"], handle: "@harrystyles" },
+  { artist: "Lady Gaga & Doechii", titles: ["RUNWAY"], handle: "@ladygaga & @doechii" },
+  { artist: "Slayyyter", titles: ["DANCE...", "brand new chanel$"], handle: "@slayyyter" },
+  { artist: "Kacey Musgraves", titles: ["Dry Spell", "I Will Always Love You"], handle: "@spaceykacey" },
+  { artist: "Lainey Wilson", titles: ["Somewhere Over Laredo"], handle: "@laineywilson" },
+  { artist: "Luke Combs", titles: ["Back in the Saddle"], handle: "@lukecombs" },
+  { artist: "Shaboozey", titles: ["Cowgirl"], handle: "@shaboozey" },
+  { artist: "Tucker Wetmore", titles: ["Brunette"], handle: "@tuckerwetmore" },
+  { artist: "FLO", titles: [], handle: "@flolikethis" },
+  { artist: "Twenty One Pilots", titles: [], handle: "@twentyonepilots" },
+  { artist: "Latto ft. Doja Cat", titles: ["Okayyy"], handle: "@latto ft. @dojacat" },
+  { artist: "A$AP Rocky", titles: ["PUNK ROCKY"], handle: "" },
+  { artist: "JISOO X ZAYN", titles: ["Eyes Closed"], handle: "" },
+  { artist: "Doechii", titles: [], handle: "@doechii" },
+  { artist: "Yung Lean", titles: [], handle: "@yunglean2001" },
+  { artist: "Snoop Dogg", titles: [], handle: "@snoopdogg" },
+  { artist: "Nirvana", titles: ["Video Vanguard"], handle: "" },
+  { artist: "Teddy Swims", titles: [], handle: "@teddyswims" },
+  { artist: "Gunna", titles: ["Cowgirl", "High Noon"], handle: "@gunna" },
+  { artist: "Shaboozey feat. Gunna", titles: ["Cowgirl", "High Noon"], handle: "@shaboozey & @gunna" }
+];
+
+const categories = {
+  carpet: "VMAs carpet",
+  performer: "Performer reveal",
+  presenter: "Presenter reveal",
+  winner: "Award winner",
+  honoree: "Honoree / tribute",
+  reaction: "Hype / reaction",
+  pair: "Pairs / duos",
+  throwback: "Throwback",
+  crossover: "Crossover / BTS",
+  tunein: "Tune-in / CTA",
+  lineup: "Lineup recap"
+};
+
+const templates = {
+  carpet: [
+    { caption: "stunning as always, thanks for coming to the #VMAs, [name1] 💙", onscreen: "[name1] shows up for the VMAs" },
+    { caption: "[name1] serving another stellar #VMAs look 📸", onscreen: "[name1] with another stellar VMAs look" },
+    { caption: "[name1] takes on the #VMAs carpet!", onscreen: "[name1] takes on the VMAs carpet" },
+    { caption: "we're obsessed with this look, [name1] 🖤", onscreen: "[name1] serving looks on the carpet" },
+    { caption: "[name1] bringing the energy to the #VMAs carpet 🔥", onscreen: "[name1] brings the energy to the VMAs" },
+    { caption: "the way [name1] just [extra]... iconic. #VMAs", onscreen: "[name1] [extra]" },
+    { caption: "it's [name1] & [name2] at the #VMAs!!!", onscreen: "it's [name1] & [name2] at the VMAs!" },
+    { caption: "always a delight getting to see [name1], especially at the #VMAs! 🏆", onscreen: "always a delight, [name1]" }
+  ],
+  performer: [
+    { caption: "🚨 [name1] is performing at the #VMAs this year!", onscreen: "PERFORMER\n[name1]" },
+    { caption: "get ready to hear [name1] hit the stage at the #VMAs 🎶", onscreen: "[name1] takes the VMAs stage" },
+    { caption: "[name1] is bringing [extra] to life at the #VMAs 🎤", onscreen: "TRIBUTE PERFORMANCE\n[extra]" },
+    { caption: "the queen of pop is taking the #VMAs stage. [name1] is performing this sunday 👑", onscreen: "PERFORMER\n[name1]" }
+  ],
+  presenter: [
+    { caption: "[name1] is presenting at this year's #VMAs!", onscreen: "PRESENTER\n[name1]" },
+    { caption: "save the date, [name1] is taking the stage as a presenter at the #VMAs 👀", onscreen: "PRESENTER\n[name1]" },
+    { caption: "who's ready to see [name1] present at the #VMAs?", onscreen: "PRESENTER\n[name1]" }
+  ],
+  winner: [
+    { caption: "and the winner for [extra] is... [name1]! 🏆 congrats! #VMAs", onscreen: "WINNER\n[extra]\n[name1]" },
+    { caption: "🚨 [name1] takes home [extra] at the #VMAs!!", onscreen: "[extra]\n[name1]" },
+    { caption: "well deserved. [name1] wins [extra] at this year's #VMAs 👏", onscreen: "WINNER: [extra]\n[name1]" }
+  ],
+  honoree: [
+    { caption: "tonight we're honoring [name1] with [extra] 🏆 #VMAs", onscreen: "HONOREE\n[name1]\n[extra]" },
+    { caption: "[name1] receives [extra] at the #VMAs — congratulations! 👏", onscreen: "[extra]\n[name1]" },
+    { caption: "a career worth celebrating. [name1] takes home [extra] tonight at the #VMAs", onscreen: "HONORING [name1]\n[extra]" }
+  ],
+  reaction: [
+    { caption: "the lineup keeps getting better... [name1] joins the #VMAs 😍", onscreen: "[name1] joins the VMAs lineup" },
+    { caption: "not us losing it over [name1] joining the #VMAs 😍", onscreen: "[name1] is joining the VMAs" },
+    { caption: "[name1] at the #VMAs? say less.", onscreen: "[name1] at the VMAs" },
+    { caption: "how could we *not* flip out seeing [name1] at the #VMAs?!?!", onscreen: "seeing [name1] at the VMAs" }
+  ],
+  pair: [
+    { caption: "loved spotting [name1] & [name2] on the #VMAs carpet tonight 🥰", onscreen: "spotted: [name1] & [name2]" },
+    { caption: "either way, we're happy to see you, [name1] & [name2]! 🫶 #VMAs", onscreen: "happy to see you, [name1] & [name2]" },
+    { caption: "thanks for blessing us on the #VMAs carpet, [name1] & [name2]!", onscreen: "thanks for blessing the carpet\n[name1] & [name2]" },
+    { caption: "[name1] & [name2] showing up and showing out at the #VMAs", onscreen: "[name1] & [name2] at the VMAs" }
+  ],
+  throwback: [
+    { caption: "then and now: [name1] at the #VMAs 📸", onscreen: "THROWBACK\n[name1] at the VMAs" },
+    { caption: "a blast from the past... [name1] serving looks at the #VMAs back in [extra] 🖤", onscreen: "[name1] at the VMAs, [extra]" },
+    { caption: "we found this gem in the archive. [name1] at the #VMAs, throwback edition", onscreen: "THROWBACK\n[name1]" }
+  ],
+  crossover: [
+    { caption: "you know [name1] from [extra], now catch them at the #VMAs!", onscreen: "[name1]\nfrom [extra] to the VMAs" },
+    { caption: "from [extra] to the #VMAs stage, [name1] is doing it all this week.", onscreen: "[name1]: from [extra] to the VMAs" },
+    { caption: "[name1] trading in [extra] for the #VMAs stage this year 🌊➡️🎤", onscreen: "[name1] trades [extra] for the VMAs" }
+  ],
+  tunein: [
+    { caption: "catch [name1] and the rest of the #VMAs lineup, this sunday on CBS and streaming on @paramountplus!", onscreen: "SUNDAY\nCBS & PARAMOUNT+" },
+    { caption: "the 2026 #VMAs are almost here 👀 don't miss [name1] on the carpet, this sunday on CBS and @paramountplus", onscreen: "DON'T MISS [name1]\nSUNDAY ON CBS" },
+    { caption: "don't miss a second, the #VMAs air this sunday on CBS and @paramountplus", onscreen: "THE VMAS\nSUNDAY ON CBS" }
+  ],
+  lineup: [
+    { caption: "the lineup is stacked 🚨 here's everyone confirmed to perform and present at the 2026 #VMAs", onscreen: "THE FULL VMAS LINEUP" },
+    { caption: "meet your 2026 #VMAs performers and presenters 🎤✨ who are you most excited for?", onscreen: "MEET YOUR 2026 VMAS LINEUP" },
+    { caption: "more names just dropped for the #VMAs lineup 👀 [name1], [name2], and more are all set to hit the carpet/stage.", onscreen: "JUST ANNOUNCED\n[name1] + [name2]" }
+  ]
+};
+
+let currentCategory = "carpet";
+let currentTemplateIndex = 0;
+
+// Looks up the confirmed @handle(s) for a name, exact match against mtvLookup.
+function getHandle(name) {
+  const entry = mtvLookup.find(e => e.artist.toLowerCase() === name.toLowerCase());
+  return entry && entry.handle ? entry.handle : "";
+}
+
+// Fills a name field and its paired handle field together. Always sets the
+// handle field (even to blank) so a stale handle from a previous name never
+// stays attached to a new one.
+function fillNameAndHandle(fieldId, name) {
+  document.getElementById(fieldId).value = name;
+  const handleFieldId = fieldId === "name1" ? "handle1" : "handle2";
+  document.getElementById(handleFieldId).value = getHandle(name);
+  render();
+}
+
+function clearAllFields() {
+  ["name1","handle1","name2","handle2","extra"].forEach(id => {
+    document.getElementById(id).value = "";
+  });
+  document.getElementById("collabTag").checked = false;
+  render();
+}
+
+function buildNameTags() {
+  const container = document.getElementById("quickNames");
+  container.innerHTML = "";
+  quickNamePool.forEach(n => {
+    const tag = document.createElement("div");
+    tag.className = "name-tag";
+    tag.textContent = n;
+    tag.onclick = () => {
+      const n1 = document.getElementById("name1");
+      fillNameAndHandle(!n1.value ? "name1" : "name2", n);
+    };
+    container.appendChild(tag);
+  });
+}
+
+function buildQuickCategories() {
+  const container = document.getElementById("quickCategories");
+  container.innerHTML = "";
+  awardCategories.forEach(c => {
+    const tag = document.createElement("div");
+    tag.className = "name-tag";
+    tag.textContent = c;
+    tag.onclick = () => {
+      document.getElementById("extra").value = c;
+      render();
+    };
+    container.appendChild(tag);
+  });
+}
+
+function buildCategoryButtons() {
+  const container = document.getElementById("categoryScroll");
+  container.innerHTML = "";
+  Object.keys(categories).forEach(key => {
+    const btn = document.createElement("button");
+    btn.className = "cat-btn" + (key === currentCategory ? " active" : "");
+    btn.textContent = categories[key];
+    btn.onclick = () => {
+      currentCategory = key;
+      currentTemplateIndex = 0;
+      buildCategoryButtons();
+      buildTemplateList();
+      render();
+    };
+    container.appendChild(btn);
+  });
+}
+
+function buildTemplateList() {
+  const container = document.getElementById("templateList");
+  container.innerHTML = "";
+  templates[currentCategory].forEach((tpl, i) => {
+    const btn = document.createElement("button");
+    btn.className = "tpl-btn" + (i === currentTemplateIndex ? " selected" : "");
+    btn.textContent = tpl.caption;
+    btn.onclick = () => {
+      currentTemplateIndex = i;
+      buildTemplateList();
+      render();
+    };
+    container.appendChild(btn);
+  });
+}
+
+function fillPlaceholders(str) {
+  const name1 = document.getElementById("name1").value.trim();
+  const name2 = document.getElementById("name2").value.trim();
+  const extra = document.getElementById("extra").value.trim();
+
+  let result = str;
+  result = result.split("[name1]").join(name1 ? name1 : "[NAME 1]");
+  result = result.split("[name2]").join(name2 ? name2 : "[NAME 2]");
+  result = result.split("[extra]").join(extra ? extra : "[DETAIL]");
+
+  return result;
+}
+
+function highlight(text) {
+  let escaped = text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+  escaped = escaped.replace(/\n/g, "<br>");
+  escaped = escaped.replace(/\[NAME 1\]/g, '<span class="placeholder-hint">[NAME 1]</span>');
+  escaped = escaped.replace(/\[NAME 2\]/g, '<span class="placeholder-hint">[NAME 2]</span>');
+  escaped = escaped.replace(/\[DETAIL\]/g, '<span class="placeholder-hint">[DETAIL]</span>');
+  escaped = escaped.replace(/(#\w+)/g, '<span class="hashtag">$1</span>');
+  return escaped;
+}
+
+function ensureHashtag(text) {
+  if (/#VMAs?\b/i.test(text)) return { text, added: false };
+  return { text: text + " #VMAs", added: true };
+}
+
+function render() {
+  const tpl = templates[currentCategory][currentTemplateIndex];
+  let captionText = fillPlaceholders(tpl.caption);
+  const onscreenText = fillPlaceholders(tpl.onscreen);
+  const platform = document.getElementById("platform").value;
+
+  const note = document.getElementById("autoTagNote");
+  if (platform === "feed") {
+    const result = ensureHashtag(captionText);
+    captionText = result.text;
+    note.textContent = result.added ? "#VMAs auto-added (missing from this template)." : "";
+  } else {
+    note.textContent = "Stories: tag manually, no auto hashtag added.";
+  }
+
+  document.getElementById("outputCaption").innerHTML = highlight(captionText);
+  document.getElementById("outputOnscreen").innerHTML = highlight(onscreenText);
+  document.getElementById("copiedMsg").textContent = "";
+  document.getElementById("copiedMsgSticky").textContent = "";
+
+  const collabHint = document.getElementById("collabHint");
+  collabHint.style.display = document.getElementById("collabTag").checked ? "block" : "none";
+
+  copyStep = 0;
+  const megaBtn = document.querySelector("button.mega");
+  if (megaBtn) megaBtn.textContent = "Copy caption, then on-screen text (one tap each)";
+}
+
+function copyBox(id) {
+  const el = document.getElementById(id);
+  const plain = el.innerText;
+  const msg = document.getElementById("copiedMsg");
+  const msgSticky = document.getElementById("copiedMsgSticky");
+  const setMsg = (text) => {
+    msg.textContent = text;
+    msgSticky.textContent = text;
+    setTimeout(() => { msg.textContent = ""; msgSticky.textContent = ""; }, 2000);
+  };
+  try {
+    navigator.clipboard.writeText(plain).then(() => {
+      setMsg("copied to clipboard ✓");
+    }).catch(() => fallbackCopy(plain, setMsg));
+  } catch (e) {
+    fallbackCopy(plain, setMsg);
+  }
+}
+
+// Guided two-tap flow for the mega button: tap once for the caption, again
+// for the on-screen text, so there's one button to find instead of two.
+let copyStep = 0;
+function copyBothSequential() {
+  const megaBtn = document.querySelector("button.mega");
+  if (copyStep === 0) {
+    copyBox("outputCaption");
+    megaBtn.textContent = "Caption copied ✓ — tap again for on-screen text";
+    copyStep = 1;
+  } else {
+    copyBox("outputOnscreen");
+    megaBtn.textContent = "On-screen text copied ✓ — pick a new template to reset";
+    copyStep = 0;
+  }
+}
+
+function fallbackCopy(text, setMsg) {
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand("copy");
+    setMsg("copied to clipboard ✓");
+  } catch (e) {
+    setMsg("couldn't copy, select text manually");
+  }
+  document.body.removeChild(ta);
+}
+
+document.getElementById("themeToggle").onclick = () => {
+  const root = document.documentElement;
+  const current = root.getAttribute("data-theme");
+  if (current === "dark") {
+    root.setAttribute("data-theme", "light");
+  } else if (current === "light") {
+    root.removeAttribute("data-theme");
+  } else {
+    root.setAttribute("data-theme", "dark");
+  }
+};
+
+function escapeHtml(s) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function insertName(value) {
+  const n1 = document.getElementById("name1");
+  const n2 = document.getElementById("name2");
+  const target = !n1.value ? "name1" : (!n2.value ? "name2" : "name1");
+  fillNameAndHandle(target, value);
+}
+
+function insertTitle(value) {
+  document.getElementById("extra").value = value;
+  render();
+}
+
+function renderLookup() {
+  const q = document.getElementById("lookupSearch").value.trim().toLowerCase();
+  const container = document.getElementById("lookupResults");
+  container.innerHTML = "";
+
+  let matches = mtvLookup;
+  if (q) {
+    matches = mtvLookup.filter(entry =>
+      entry.artist.toLowerCase().includes(q) ||
+      entry.titles.some(t => t.toLowerCase().includes(q)) ||
+      (entry.handle && entry.handle.toLowerCase().includes(q))
+    );
+  }
+
+  if (matches.length === 0) {
+    container.innerHTML = '<div class="lookup-empty">No match — check vote.mtv.com directly, this list may not be exhaustive.</div>';
+    return;
+  }
+
+  // Cap unfiltered list length so it's not overwhelming; searching narrows it.
+  const toShow = q ? matches : matches.slice(0, 12);
+
+  toShow.forEach(entry => {
+    const row = document.createElement("div");
+    row.className = "lookup-row";
+
+    const artistEl = document.createElement("div");
+    artistEl.className = "lookup-artist";
+    artistEl.textContent = entry.artist + (entry.handle ? "  ·  " + entry.handle : "");
+    artistEl.onclick = () => insertName(entry.artist);
+    row.appendChild(artistEl);
+
+    if (entry.titles.length) {
+      const titlesEl = document.createElement("div");
+      titlesEl.className = "lookup-titles";
+      entry.titles.forEach(title => {
+        const chip = document.createElement("div");
+        chip.className = "lookup-title-chip";
+        chip.textContent = title;
+        chip.onclick = () => insertTitle(title);
+        titlesEl.appendChild(chip);
+      });
+      row.appendChild(titlesEl);
+    }
+
+    container.appendChild(row);
+  });
+
+  if (!q && matches.length > 12) {
+    const more = document.createElement("div");
+    more.className = "lookup-empty";
+    more.textContent = `+ ${matches.length - 12} more — search to narrow down.`;
+    container.appendChild(more);
+  }
+}
+
+// Combined, deduped pool of confirmed names for live autocomplete.
+const allNamesPool = Array.from(new Set([
+  ...mtvLookup.map(e => e.artist),
+  ...quickNamePool
+]));
+
+// Strips casing/punctuation/spacing so "Charli-XCX", "charli xcx", and
+// "CHARLIXCX" all compare equal — typing conventions vary a lot live.
+function normalizeForMatch(s) {
+  return s.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+function levenshtein(a, b) {
+  const m = a.length, n = b.length;
+  if (m === 0) return n;
+  if (n === 0) return m;
+  const prev = new Array(n + 1);
+  for (let j = 0; j <= n; j++) prev[j] = j;
+  for (let i = 1; i <= m; i++) {
+    let prevDiag = prev[0];
+    prev[0] = i;
+    for (let j = 1; j <= n; j++) {
+      const temp = prev[j];
+      prev[j] = Math.min(
+        prev[j] + 1,
+        prev[j - 1] + 1,
+        prevDiag + (a[i - 1] === b[j - 1] ? 0 : 1)
+      );
+      prevDiag = temp;
+    }
+  }
+  return prev[n];
+}
+
+// Best (lowest) edit distance between the query and any equal-length window
+// of the target — lets a typo anywhere in a partially-typed name still match.
+function bestWindowDistance(q, t) {
+  if (q.length === 0) return 0;
+  if (t.length <= q.length) return levenshtein(q, t);
+  let best = Infinity;
+  for (let i = 0; i <= t.length - q.length; i++) {
+    const dist = levenshtein(q, t.substr(i, q.length));
+    if (dist < best) best = dist;
+    if (best === 0) return 0;
+  }
+  return best;
+}
+
+function isSubsequence(q, t) {
+  let ti = 0;
+  for (let qi = 0; qi < q.length; qi++) {
+    ti = t.indexOf(q[qi], ti);
+    if (ti === -1) return false;
+    ti++;
+  }
+  return true;
+}
+
+// Ranks confirmed names against an imprecisely-typed query: exact prefix and
+// substring matches come first, then near-miss typos (edit-distance
+// tolerant), then loose subsequence matches, so a slightly garbled name
+// still surfaces the right confirmed spelling.
+function getSuggestions(query) {
+  const rawQ = query.trim();
+  if (!rawQ) return [];
+  const nq = normalizeForMatch(rawQ);
+  if (!nq) return [];
+
+  const tolerance = nq.length <= 3 ? 1 : nq.length <= 6 ? 2 : 3;
+  const scored = [];
+
+  allNamesPool.forEach(name => {
+    const nt = normalizeForMatch(name);
+    if (!nt) return;
+    let rank = null;
+    if (nt.startsWith(nq)) rank = 0;
+    else if (nt.includes(nq)) rank = 1;
+    else {
+      const dist = bestWindowDistance(nq, nt);
+      if (dist <= tolerance) rank = 2 + dist;
+      else if (isSubsequence(nq, nt)) rank = 6;
+    }
+    if (rank !== null) scored.push({ name, rank });
+  });
+
+  scored.sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name));
+  return scored.slice(0, 6).map(s => s.name);
+}
+
+function showSuggestions(fieldId) {
+  const input = document.getElementById(fieldId);
+  const box = document.getElementById("suggest-" + fieldId);
+  const matches = getSuggestions(input.value);
+  box.innerHTML = "";
+  if (matches.length === 0) {
+    box.classList.remove("open");
+    return;
+  }
+  matches.forEach(name => {
+    const item = document.createElement("div");
+    item.className = "suggest-item";
+    item.textContent = name;
+    // onmousedown fires before the input's onblur, so the click registers
+    // before the suggestion box gets hidden.
+    item.onmousedown = (e) => {
+      e.preventDefault();
+      selectSuggestion(fieldId, name);
+    };
+    box.appendChild(item);
+  });
+  box.classList.add("open");
+}
+
+function selectSuggestion(fieldId, value) {
+  fillNameAndHandle(fieldId, value);
+  document.getElementById("suggest-" + fieldId).classList.remove("open");
+}
+
+function hideSuggestionsSoon(fieldId) {
+  setTimeout(() => {
+    document.getElementById("suggest-" + fieldId).classList.remove("open");
+  }, 120);
+}
+
+buildNameTags();
+buildQuickCategories();
+buildCategoryButtons();
+buildTemplateList();
+render();
+renderLookup();
+</script>
+</body>
+</html>
